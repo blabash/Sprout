@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { login, logout, signup } from "./util/session_api_util"; //testing
+import configureStore from './store/store';
+import Root from "./components/root";
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    window.login = login;
-    window.logout = logout;
-    window.signup = signup;
+    const store = configureStore();
+
+    // window.login = login; //testing
+    // window.logout = logout; //testing
+    // window.signup = signup; //testing
+    window.getState = store.getState; //testing
+    window.dispatch = store.dispatch; //testing
     
     const root = document.getElementById('root');
-    ReactDOM.render(<h1>Welcome to Sprout</h1>, root);
+    ReactDOM.render(<Root store={store} />, root);
 });
