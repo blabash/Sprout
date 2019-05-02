@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
 
     update(field) {
@@ -35,13 +36,18 @@ class SessionForm extends React.Component {
         );
     }
 
+    demoLogin(e) {
+       e.preventDefault();
+       let demoUser = { username: 'demoUser', password: 'userDemo'}
+       this.props.processForm(demoUser)
+    }
+
     render() {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Welcome to Sprout!
                     <br />
-                    Please {this.props.formType} or {this.props.navLink}
+                    {/* Please {this.props.formType} or {this.props.navLink} */}
                     {this.renderErrors()}
                     <div className="login-form">
                         <br />
@@ -62,6 +68,7 @@ class SessionForm extends React.Component {
                         </label>
                         <br />
                         <input className="session-submit" type="submit" value={this.props.formType} />
+                        <button onClick={this.demoLogin}>Demo Login</button>
                     </div>
                 </form>
             </div>
