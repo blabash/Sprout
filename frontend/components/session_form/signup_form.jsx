@@ -69,7 +69,6 @@ class SignUpForm extends React.Component {
         if (this.state.getStarted) {
             return (
             <div>
-                {/* <NavBarContainer /> needs to be implemented*/}
                 <div className="signup-main-div">
                     <h1 className="signup-logo">sprout</h1>
                     {motto}
@@ -97,13 +96,12 @@ class SignUpForm extends React.Component {
         }
         return (
             <div>
-                {/* <NavBarContainer /> needs to be implemented */}
                 <div className="signup-main-div-animate">
                     <div className="main-div-animate">
                         <h1>sprout</h1>
                         {motto}
                         <button className="get-started" onClick={this.handleGetStarted}>Get Started</button>
-                        <Link className="login-link" to="/login">Login</Link>
+                        <Link className="login-link" to="/login"><button>Login</button></Link>
                         <button className="signup-button-animate" onClick={this.demoLogin}>Demo Login</button>
                     </div>
                 </div>

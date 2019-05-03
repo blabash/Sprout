@@ -15,21 +15,20 @@ import {
 class App extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
+        // console.log(props);
     }
 
     render() {
         return (
-            <div>
+            <div className="background" id="backGroundDiv">
                 <header>
-                    <NavContainer currentUrl={this.props.location} />
+                    <Route path ="/" component={NavContainer} />
                 </header>
-                <div className="background" id="backGroundDiv"></div>
+                {/* <div className="background" id="backGroundDiv"></div> */}
                 <Switch>
                     <ProtectedRoute exact path="/posts" component={PostConstainer}/>
                     <AuthRoute exact path="/login" component={LogInFormContainer} />
                     <AuthRoute exact path="/" component={SignUpFormContainer} />
-                    {/* <Route path="/" component={Homepage} />     */}
                     <Redirect to="/" />
                 </Switch>
             </div>

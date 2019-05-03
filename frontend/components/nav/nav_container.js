@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import Nav from './nav';
+import Nav from './nav.jsx';
 
 const mapStateToProps = (state) => {
     return ({

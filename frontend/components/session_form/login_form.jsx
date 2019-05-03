@@ -54,7 +54,6 @@ class LogInForm extends React.Component {
         if (this.state.validUsername) {
             return (
                 <div>
-                    {/* <NavBarContainer /> needs to be implemented*/}
                     <div className="login-main-div-animate">
                         <h1 className="login-logo-animate">sprout</h1>
                         <div className="login-form-div">
@@ -82,7 +81,6 @@ class LogInForm extends React.Component {
 
         return(
             <div>
-                {/* <NavBarContainer /> needs to be implemented*/}
                 <div className="login-main-div-animate">
                     <h1 className="login-logo">sprout</h1>
                     <div className="login-form-div">
