@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom';
 
 function PostIcon(props) {
     return (
-        <div class="post-icon">
+        <div className="post-icon">
             <img src="https://dsuk.innogamescdn.com/asset/2661920a/graphic/big_buildings/main3.png" alt="{props.name}" />
-            <div class="post-text">{props.name}</div>
+            <div className="post-text">{props.name}</div>
         </div>
     );
 }

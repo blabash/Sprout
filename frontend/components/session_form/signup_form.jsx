@@ -51,7 +51,11 @@ class SignUpForm extends React.Component {
     demoLogin(e) {
         e.preventDefault();
         let demoUser = { username: 'demoUser', password: 'userDemo' }
-        this.props.signup(demoUser)
+        this.props.login(demoUser)
+    }
+
+    componentWillUnmount() {
+        this.props.removeErrors();
     }
 
     render() {

@@ -10,6 +10,7 @@ class LogInForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleUsername = this.handleUsername.bind(this);
     }
 
     handleSubmit(e) {
@@ -43,6 +44,10 @@ class LogInForm extends React.Component {
                 ))}
             </ul>
         );
+    }
+
+    componentWillUnmount() {
+        this.props.removeErrors();
     }
 
     render() {
@@ -81,7 +86,7 @@ class LogInForm extends React.Component {
                 <div className="login-main-div-animate">
                     <h1 className="login-logo">sprout</h1>
                     <div className="login-form-div">
-                        <form onSubmit={this.handleSubmit} className="login-form">
+                        <form onSubmit={this.handleUsername} className="login-form">
                             {this.renderErrors()}
                             <input type="text"
                                 value={this.state.username}
