@@ -20,6 +20,8 @@ class User < ApplicationRecord
     class_name: :Follow
 
   has_many :likes
+    foreign_key: :user_id,
+    class_name: :Like
 
   has_many :liked_posts,
     through: :likes,

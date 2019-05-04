@@ -49,7 +49,9 @@ class Nav extends React.Component {
         } else if (this.props.location.pathname === "/signup") {
             mainButton = <Link to="/login" className="nav-login-button"><button>Log in</button></Link>;
         } else if (this.props.location.pathname ==="/posts") {
-            mainButton= <button onClick={this.props.logout}>Log out</button>;
+            mainButton = <button onClick={this.props.logout}>Log out</button>;
+        } else if (this.props.location.pathname === "/") {
+            mainButton = <Link to="/login" className="nav-login-button"><button>Log in</button></Link>; 
         }
 
         return (

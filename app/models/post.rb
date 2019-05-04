@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-    validates :user_id, :type, presence: true
+    validates :user_id, :type, :title, presence: true
 
     belongs_to :user,
         foreign_key: :user_id,
@@ -7,12 +7,12 @@ class Post < ApplicationRecord
 
     has_many :likes,
         foreign_key: :post_id,
-        class_name: :Like,
-        dependent: :destroy
+        dependent: :destroy,
+        class_name: :Like
 
     has_many :likers,
         through: :likes,
         source: :user
 
-    has_many_attached :elements
+    has_one_attached :element
 end
