@@ -19,6 +19,11 @@ class PostsController < ApplicationController
     def create
         @post = Post.new(post_params)
         @post.user_id = current_user.id
+        @post
+
+        if params[:media_element] 
+            @post.media_element.attach(params[:media_element])
+        end
 
         if @post.save
             render 'api/posts/show'
@@ -29,6 +34,11 @@ class PostsController < ApplicationController
 
     def update
         @post = Post.find(params[:id])
+
+        if params[:media_element]
+            new_media_element = params[:media_element] 
+            @post.media_element.attach(new_media_element)
+        end
 
         if @post.update(post_params)
             render 'api/posts/show'
@@ -43,7 +53,7 @@ class PostsController < ApplicationController
         
         if @post
             if @post.destroy!
-                @posts = Post.all
+                # @posts = Post.all
                 render 'api/posts/show'
             else
                 render json: @post.errors.full_messages, status: 422
@@ -56,6 +66,6 @@ class PostsController < ApplicationController
     private
 
     def post_params 
-        params.require(:post).permit(:user_id, :title, :type, :body, :element)
+        params.require(:post).permit(:user_id, :title, :type, :body, :media_element)
     end
 end
