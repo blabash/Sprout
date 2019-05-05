@@ -4,3 +4,118 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.signup-main-div-animate,.login-main-div-animate {
+    text-align: center;
+    display: inline-block;
+	position:fixed;
+    width:100%;
+    height:100%;
+	top: 35%;
+	-webkit-transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -o-transition: opacity 2s ease-in;
+    -ms-transition: opacity 2s ease-in;
+    transition: opacity 2s ease-in;
+    -webkit-animation: 1s ease-out 0s 1 slideUp;
+    -moz-animation: 1s ease-out 0s 1 slideUp;
+    -ms-animation: 1s ease-out 0s 1 slideUp;
+    -o-animation: 1s ease-out 0s 1 slideUp;
+    animation: 1s ease-out 0s 1 slideUp, fadeIn ease 1s;
+}
+
+.main-div-animate {
+	display: inline-block;
+}
+
+.sprout-name {
+  color: white;
+  font-size: 4em;
+}
+
+.sprout-motto {
+	margin: 10px 0 16px 0px;
+}
+
+.motto-text {
+  color: white;
+}
+
+.square-button {
+  float: left;
+  border: 0px solid white;
+  width: 100%;
+  padding: 10px 0px;
+  font-size: 1.5em;
+  margin-bottom: 12px;
+}
+
+.blue {
+	background-color: rgb(0, 184, 255);
+}
+
+.fade-in {
+  //animation: fadeIn ease 1s;
+  //-webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
+  -ms-animation: fadeIn ease 1s;
+}
+
+.red {
+	color: red;
+}
+
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(4%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

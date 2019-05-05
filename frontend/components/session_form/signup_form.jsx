@@ -61,8 +61,8 @@ class SignUpForm extends React.Component {
     render() {
         const motto = (
             <div className="sprout-motto">
-                <h3>Come for what you love.</h3>
-                <h3>Stay for what you discover.</h3>
+                <div className="motto-text">Come for what you love.</div>
+                <div className="motto-text">Stay for what you discover.</div>
             </div>
         )
 
@@ -87,7 +87,7 @@ class SignUpForm extends React.Component {
                                 className="signup-input-lower-animate"
                                 placeholder="Password"
                             />
-                            <input className="signup-submit-animate" type="submit" value="Sign up" />
+                            <input className="signup-submit-animate square-button" type="submit" value="Sign up" />
                         </form>
                     </div>
                 </div>
@@ -96,13 +96,15 @@ class SignUpForm extends React.Component {
         }
         return (
             <div>
-                <div className="signup-main-div-animate">
+                <div className="signup-main-div-animate fade-in">
                     <div className="main-div-animate">
-                        <h1>sprout</h1>
+                        <div className="sprout-name">sprout</div>
                         {motto}
-                        <button className="get-started" onClick={this.handleGetStarted}>Get Started</button>
-                        <Link className="login-link" to="/login"><button>Login</button></Link>
-                        <button className="signup-button-animate" onClick={this.demoLogin}>Demo Login</button>
+                        <button className="get-started square-button blue" onClick={this.handleGetStarted}>Get Started</button>
+                        <Link className="login-link" to="/login">
+                          <button className="square-button">Login</button>
+                        </Link>
+                        <button className="signup-button-animate square-button" onClick={this.demoLogin}>Demo Login</button>
                     </div>
                 </div>
             </div>
