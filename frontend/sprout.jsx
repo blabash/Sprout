@@ -9,9 +9,9 @@ import Root from "./components/root";
 document.addEventListener('DOMContentLoaded', () => {
 
     // window.login = login; //testing
-    window.logout = logout; //testing
+    // window.logout = logout; //testing
     // window.signup = signup; //testing
-    // window.getState = store.getState; //testing
+    
     // window.dispatch = store.dispatch; //testing
 
     let store;
@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore();
     }
+
+    window.getState = store.getState; //testing
     
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
