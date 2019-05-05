@@ -14,5 +14,5 @@ class Post < ApplicationRecord
         through: :likes,
         source: :user
 
-    # has_one_attached :media_element
+    has_one_attached :media_element
 end
