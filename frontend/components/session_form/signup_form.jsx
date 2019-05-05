@@ -69,8 +69,9 @@ class SignUpForm extends React.Component {
         if (this.state.getStarted) {
             return (
             <div>
-                <div className="signup-main-div">
-                    <h1 className="signup-logo">sprout</h1>
+                <div className="signup-main-div-animate fade-in">
+                  <div className="main-div-animate">
+                    <h1 className="sprout-name">sprout</h1>
                     {motto}
                     <div className="signup-form-idv">
                         <form onSubmit={this.handleSubmit} className="signup-form">
@@ -78,18 +79,19 @@ class SignUpForm extends React.Component {
                             <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
-                                className="signup-input-upper-animate"
+                                className="square-button"
                                 placeholder="Username"
                             />
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
-                                className="signup-input-lower-animate"
+                                className="square-button"
                                 placeholder="Password"
                             />
-                            <input className="signup-submit-animate square-button" type="submit" value="Sign up" />
+                            <input className="signup-submit-animate square-button blue" type="submit" value="Sign up" />
                         </form>
                     </div>
+                  </div>
                 </div>
             </div>
             );
@@ -98,7 +100,7 @@ class SignUpForm extends React.Component {
             <div>
                 <div className="signup-main-div-animate fade-in">
                     <div className="main-div-animate">
-                        <div className="sprout-name">sprout</div>
+                        <div className="sprout-name">sprout?</div>
                         {motto}
                         <button className="get-started square-button blue" onClick={this.handleGetStarted}>Get Started</button>
                         <Link className="login-link" to="/login">
