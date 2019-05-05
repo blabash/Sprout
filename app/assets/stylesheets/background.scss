@@ -5,6 +5,35 @@
   background-size: cover;
 }
 
+.all-posts {
+	text-align: center;
+}
+
+.feed-item {
+	text-align: left;
+	width: 540px;
+	background-color: white;
+	border-radius: 3px;
+	margin: 12px;
+	display: inline-block;
+}
+
+.feed-item-title {
+	font-family: Gibson,Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.feed-item-body {
+	padding-right: 20px;
+    padding-left: 20px;
+    font-family: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+}
+
 .signup-main-div-animate,.login-main-div-animate {
     text-align: center;
     display: inline-block;

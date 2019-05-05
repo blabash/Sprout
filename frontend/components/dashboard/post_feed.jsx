@@ -21,7 +21,7 @@ class PostFeed extends React.Component {
         })
 
         return(
-            <div className="all-posts">
+            <div id="feed" className="all-posts">
                 {posts}
             </div>
         )
