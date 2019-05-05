@@ -1,6 +1,6 @@
 @posts.each do |post|
     json.set! post.id do
-        json.extract! post, :id, :user_id, :title, :type, :body
+        json.extract! post, :id, :user_id, :title, :post_type, :body
         json.username post.user.username
         # json.likes do
         #     post.likes.map do |like|

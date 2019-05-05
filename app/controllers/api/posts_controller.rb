@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class Api::PostsController < ApplicationController
     before_action :require_logged_in
 
     def index
@@ -17,13 +17,17 @@ class PostsController < ApplicationController
     end
 
     def create
+        # print post_params
+        # print @post
+        # derp = Post
+        Post.new(post_params)
+
         @post = Post.new(post_params)
         @post.user_id = current_user.id
-        @post
 
-        if params[:media_element] 
-            @post.media_element.attach(params[:media_element])
-        end
+        # if params[:media_element] 
+        #     @post.media_element.attach(params[:media_element])
+        # end
 
         if @post.save
             render 'api/posts/show'
@@ -35,10 +39,10 @@ class PostsController < ApplicationController
     def update
         @post = Post.find(params[:id])
 
-        if params[:media_element]
-            new_media_element = params[:media_element] 
-            @post.media_element.attach(new_media_element)
-        end
+        # if params[:media_element]
+        #     new_media_element = params[:media_element] 
+        #     @post.media_element.attach(new_media_element)
+        # end
 
         if @post.update(post_params)
             render 'api/posts/show'
@@ -48,6 +52,7 @@ class PostsController < ApplicationController
     end
 
     def destroy
+        print current_user
         @post = nil
         @post = Post.where(user_id: current_user.id).find(params[:id])
         
@@ -66,6 +71,6 @@ class PostsController < ApplicationController
     private
 
     def post_params 
-        params.require(:post).permit(:user_id, :title, :type, :body, :media_element)
+        params.require(:post).permit(:user_id, :title, :post_type, :body, :media_element)
     end
 end

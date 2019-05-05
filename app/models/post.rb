@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-    validates :user_id, :type, :title, presence: true
+    validates :user_id, :post_type, :title, presence: true
 
     belongs_to :user,
         foreign_key: :user_id,
@@ -14,5 +14,5 @@ class Post < ApplicationRecord
         through: :likes,
         source: :user
 
-    has_one_attached :media_element
+    # has_one_attached :media_element
 end
