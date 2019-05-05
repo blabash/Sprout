@@ -2,12 +2,10 @@ import React from 'react';
 
 const PostFeedItem = (props) => {
     return (
-        <div>
-            <ul>
-                <li>{props.post.title}</li>
-                <li>{props.post.body}</li>
-                <li>{props.post.post_type}</li>
-            </ul>
+    	<div className="feed-item">
+          <div className="feed-item-title">{props.post.title}</div>
+          <div className="feed-item-body">{props.post.body}</div>
+          {props.post.post_type}
             
         </div>
     )
