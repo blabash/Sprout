@@ -7,13 +7,25 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-#   has_many :reviews,
-#     foreign_key: :author_id
+  has_many :posts,
+    foreign_key: :user_id,
+    class_name: :Post
+
+  has_many :follows,
+    foreign_key: :user_id,
+    class_name: :Follow
     
-#   has_many :favorites
-#   has_many :favorite_benches,
-#     through: :favorites,
-#     source: :bench
+  has_many :followers,
+    foreign_key: :follower_id,
+    class_name: :Follow
+
+  has_many :likes,
+    foreign_key: :user_id,
+    class_name: :Like
+
+  has_many :liked_posts,
+    through: :likes,
+    source: :post
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
