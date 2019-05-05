@@ -16,6 +16,15 @@
 	border-radius: 3px;
 	margin: 12px;
 	display: inline-block;
+	position: relative;
+}
+
+.feed-item-avatar-image {
+	position: absolute;
+	left: -85px;
+	border-radius: 3px;
+	display: block;
+	top: 0;
 }
 
 .feed-item-title {
