@@ -1,6 +1,6 @@
 import React from 'react';
 import PostFeedItem from './post_feed_item';
-import PostContainer from './posts/posts';
+import PostContainer from './postForms/posts';
 import PostFormContainer from './post_form_container';
 
 class PostFeed extends React.Component {
