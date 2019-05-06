@@ -5,6 +5,38 @@
   background-size: cover;
 }
 
+.text-post-form-container {
+  border-radius: 2px;
+  display: inline-block;
+  background: white;
+  width: 540px;
+  text-align: left;
+}
+
+.currentUser-button-post-form {
+  display: table;
+  padding: 10px 15px 10px 20px;
+  box-sizing: border-box;
+}
+
+.post-form-inputs {
+  padding: 0 20px;
+  position: relative;
+}
+
+.post-form-title {
+}
+
+.post-form-input {
+  font-family: Gibson,Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 47px;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 .all-posts {
     display: inline-block
 }
