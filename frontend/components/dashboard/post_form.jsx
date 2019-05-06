@@ -12,20 +12,6 @@ class PostForm extends React.Component {
         this.closePostForm = this.closePostForm.bind(this);
     }
 
-    renderErrors() {
-        return (
-            <ul className="post-errors">
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}
-                        className="post-errors-list-animate">
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
-
-
     closePostForm() {
         return e => {
             let backgroundDiv = document.getElementById("backGroundDiv");
