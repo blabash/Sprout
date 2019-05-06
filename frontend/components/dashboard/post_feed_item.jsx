@@ -11,7 +11,7 @@ const PostFeedItem = (props) => {
           <div className="feed-item-body">{props.post.body}</div>
           {props.post.post_type}
             
-        </div>
+      </div>
     )
 }
 

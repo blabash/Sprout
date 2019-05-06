@@ -1,6 +1,7 @@
 import React from 'react';
 import PostFeedItem from './post_feed_item';
 import PostContainer from './posts/posts';
+import PostFormContainer from './post_form_container';
 
 class PostFeed extends React.Component {
     constructor(props) {
@@ -13,17 +14,20 @@ class PostFeed extends React.Component {
     }
 
     render() {
-        let posts = this.props.posts.map(post => {
+        let posts = this.props.posts.map((post, idx) => {
             return(
                 <PostFeedItem 
-                    post={post} 
-                    key={post.id} />
+                    post={post}
+                    key={idx} />
             ) 
-        })
+        }).reverse();
 
         return(
           <div>
             <div className="feed-centered">
+              <div className="post-form-container-div">
+                    <PostFormContainer />
+              </div>
               <div id="feed" className="all-posts">
                 <PostContainer />
                 {posts}
