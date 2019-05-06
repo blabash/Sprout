@@ -2,6 +2,7 @@ import React from 'react';
 import PostFeedItem from './post_feed_item';
 import PostContainer from './postForms/posts';
 import PostFormContainer from './post_form_container';
+import { withRouter } from 'react-router-dom';
 
 class PostFeed extends React.Component {
     constructor(props) {
@@ -18,6 +19,9 @@ class PostFeed extends React.Component {
             return(
                 <PostFeedItem 
                     post={post}
+                    like={this.props.like}
+                    unlike={this.props.unlike}
+                    currentUser={this.props.currentUser}
                     key={idx} />
             ) 
         }).reverse();
@@ -38,4 +42,4 @@ class PostFeed extends React.Component {
     }
 }
 
-export default PostFeed;
+export default withRouter(PostFeed);

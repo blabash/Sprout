@@ -8,11 +8,9 @@ class SignUpForm extends React.Component {
         this.state = {
             username: '',
             password: '',
-            getStarted: false,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
-        this.handleGetStarted = this.handleGetStarted.bind(this);
     }
 
     update(field) {
@@ -25,13 +23,7 @@ class SignUpForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.signup(user);
-    }
-
-    handleGetStarted(e) {
-        e.preventDefault();
-        this.setState({
-            getStarted: true,
-        })
+        // this.props.closeGetStarted(); this is making the whole page refresh on new user sign up, no good if there are errors
     }
 
     renderErrors() {
@@ -66,7 +58,7 @@ class SignUpForm extends React.Component {
             </div>
         )
 
-        if (this.state.getStarted) {
+        if (this.props.getStarted) {
             return (
             <div>
                 <div className="signup-main-div-animate fade-in">
@@ -102,7 +94,7 @@ class SignUpForm extends React.Component {
                     <div className="main-div-animate">
                         <div className="sprout-name">sprout?</div>
                         {motto}
-                        <button className="get-started square-button blue" onClick={this.handleGetStarted}>Get Started</button>
+                        <button className="get-started square-button blue" onClick={this.props.openGetStarted}>Get Started</button>
                         <Link className="login-link" to="/login">
                           <button className="square-button">Login</button>
                         </Link>

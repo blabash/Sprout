@@ -5,6 +5,7 @@ import Nav from './nav.jsx';
 const mapStateToProps = (state) => {
     return ({
         currentUser: state.entities.user[state.session.id],
+        getStarted: state.ui.getStarted,
     });
 };
 
