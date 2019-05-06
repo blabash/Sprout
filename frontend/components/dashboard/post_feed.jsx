@@ -29,11 +29,8 @@ class PostFeed extends React.Component {
         return(
           <div>
             <div className="feed-centered">
-              <div className="post-form-container-div">
-                    <PostFormContainer />
-              </div>
               <div id="feed" className="all-posts">
-                <PostContainer />
+                <PostFormContainer />
                 {posts}
               </div>
             </div>

@@ -83,32 +83,32 @@ class PostForm extends React.Component {
 
         return (
             <div className="new-post-form">
-                <a className="text-post-button" onClick={this.changePostType("text")}>
-                    <i className="text-icon"></i>
+                <a className="text-post-button i-element" onClick={this.changePostType("text")}>
+                    <i className="text-icon icon-post icon_post_text"></i>
                     <div className="text-icon-text">Text</div>
                 </a>
-                <a className="photo-post-button" onClick={this.changePostType("photo")}>
-                    <i className="photo-icon"></i>
+                <a className="photo-post-button i-element" onClick={this.changePostType("photo")}>
+                    <i className="photo-icon icon-post icon_post_photo"></i>
                     <div className="photo-icon-text">Photo</div>
                 </a>
-                <a className="quote-post-button" onClick={this.changePostType("quote")}>
-                    <i className="quote-icon"></i>
+                <a className="quote-post-button i-element" onClick={this.changePostType("quote")}>
+                    <i className="quote-icon icon-post icon_post_quote"></i>
                     <div className="quote-icon-text">Quote</div>
                 </a>
-                <a className="link-post-button" onClick={this.changePostType("link")}>
-                    <i className="link-icon"></i>
+                <a className="link-post-button i-element" onClick={this.changePostType("link")}>
+                    <i className="link-icon icon-post icon_post_link"></i>
                     <div className="link-icon-text">Link</div>
                 </a>
-                <a className="chat-post-button" onClick={this.changePostType("chat")}>
-                    <i className="chat-icon"></i>
+                <a className="chat-post-button i-element" onClick={this.changePostType("chat")}>
+                    <i className="chat-icon icon-post icon_post_chat"></i>
                     <div className="chat-icon-text">Chat</div>
                 </a>
-                <a className="audio-post-button" onClick={this.changePostType("audio")}>
-                    <i className="audio-icon"></i>
+                <a className="audio-post-button i-element" onClick={this.changePostType("audio")}>
+                    <i className="audio-icon icon-post icon_post_audio"></i>
                     <div className="audio-icon-text">Audio</div>
                 </a>
-                <a className="video-post-button" onClick={this.changePostType("video")}>
-                    <i className="video-icon"></i>
+                <a className="video-post-button i-element" onClick={this.changePostType("video")}>
+                    <i className="video-icon icon-post icon_post_video"></i>
                     <div className="video-icon-text">Video</div>
                 </a>
             </div>
