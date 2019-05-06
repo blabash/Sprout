@@ -4,17 +4,52 @@ body {
   margin: 0px;
 }
 
-.icon-container {
-  border-radius: 5px;
-  background: white;
-  padding: 20px; 
-  height: 65px;
-  display: inline-block;
-  white-space: nowrap;
+.i-element {
+  float: left;
 }
 
-.post-icon {
-  float: left;
+.icons-container {
+  border-radius: 2px;
+  display: inline-block;
+  background: white;
+  width: 540px;
+  height: 99px;
+  position: relative;
+}
+
+.icon-post {
+  width: 48px;
+  height: 48px;
+  padding: 0 14px;
+  font-size: 48px;
+}
+
+.icon_post_text {
+  color: #000;
+}
+
+.icon_post_photo {
+  color: #ff492f;
+}
+
+.icon_post_quote {
+  color: #ff8a00;
+}
+
+.icon_post_link {
+  color: #00cf35;
+}
+
+.icon_post_chat {
+  color: #00b8ff;
+}
+
+.icon_post_audio {
+  color: #7c5cff;
+}
+
+.icon_post_video {
+  color: #ff62c2;
 }
 
 .post-text {

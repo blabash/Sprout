@@ -6,6 +6,10 @@
 }
 
 .all-posts {
+    display: inline-block
+}
+
+.feed-centered {
 	text-align: center;
 }
 
@@ -15,16 +19,13 @@
 	background-color: white;
 	border-radius: 3px;
 	margin: 12px;
-	display: inline-block;
 	position: relative;
 }
 
 .feed-item-avatar-image {
-	position: absolute;
-	left: -85px;
 	border-radius: 3px;
-	display: block;
-	top: 0;
+	left: -85px;
+	position: absolute;
 }
 
 .feed-item-title {

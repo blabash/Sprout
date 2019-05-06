@@ -1,27 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import '../../../app/assets/stylesheets/index.css';
 
 function PostIcon(props) {
     return (
-        <div className="post-icon">
-            <img src="https://dsuk.innogamescdn.com/asset/2661920a/graphic/big_buildings/main3.png" alt="{props.name}" />
-            <div className="post-text">{props.name}</div>
+        <div className="i-element">
+          <i className={"icon-post " + props.class}/>
+          <div className="post-text">{props.name}</div>
         </div>
     );
 }
 
 class PostIcons extends React.Component {
     render() {
+        // https://assets.tumblr.com/images/post_type_div.png
         return (
-            <div className="icon-container">
-                <PostIcon name="Text" />
-                <PostIcon name="Photo" />
-                <PostIcon name="Quote" />
-                <PostIcon name="Link" />
-                <PostIcon name="Chat" />
-                <PostIcon name="Audio" />
-                <PostIcon name="Video" />
+            <div className="icons-container">
+                <PostIcon class="icon_post_text" name="Text"/>
+                <PostIcon class="icon_post_photo" name="Photo"/>
+                <PostIcon class="icon_post_quote" name="Quote"/>
+                <PostIcon class="icon_post_link" name="Link"/>
+                <PostIcon class="icon_post_chat" name="Chat"/>
+                <PostIcon class="icon_post_audio" name="Audio"/>
+                <PostIcon class="icon_post_video" name="Video"/>
             </div>
         );
     }
@@ -36,11 +36,3 @@ class PostContainer extends React.Component {
 }
 
 export default PostContainer;
-
-// ReactDOM.render(
-//     <PostContainer />,
-//     document.getElementById('root')
-// );
-
-
-

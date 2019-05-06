@@ -1,5 +1,6 @@
 import React from 'react';
 import PostFeedItem from './post_feed_item';
+import PostContainer from './posts/posts';
 
 class PostFeed extends React.Component {
     constructor(props) {
@@ -21,9 +22,14 @@ class PostFeed extends React.Component {
         })
 
         return(
-            <div id="feed" className="all-posts">
+          <div>
+            <div className="feed-centered">
+              <div id="feed" className="all-posts">
+                <PostContainer />
                 {posts}
+              </div>
             </div>
+          </div>
         )
     }
 }
