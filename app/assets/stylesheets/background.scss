@@ -1,8 +1,26 @@
-#backGroundDiv {
+.background {
   height: 100vh;
   width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
+  animation: fadeIn ease 3s;
+}
+
+.sign-up-login {
+	background-color: #fff;
+	color: #444;
+	border: 0;
+    height: 32px;
+    line-height: 22px;
+    margin-right: 10px;
+    padding-left: 13px;
+    padding-right: 13px;
+    text-align: center;
+    vertical-align: top;
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+    border-radius: 2px;
 }
 
 .text-post-form-container {
@@ -35,6 +53,10 @@
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+.white {
+	background: white;
 }
 
 .all-posts {
@@ -143,48 +165,13 @@
 }
 
 @keyframes fadeIn{
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-moz-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 @-webkit-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-o-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-ms-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 @keyframes slideUp {

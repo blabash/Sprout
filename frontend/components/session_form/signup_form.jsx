@@ -31,7 +31,7 @@ class SignUpForm extends React.Component {
             <ul className="signup-errors">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}
-                        className="signup-errors-list-animate"
+                        className="signup-errors-list-animate red"
                         >
                         {error}
                     </li>
@@ -96,9 +96,9 @@ class SignUpForm extends React.Component {
                         {motto}
                         <button className="get-started square-button blue" onClick={this.props.openGetStarted}>Get Started</button>
                         <Link className="login-link" to="/login">
-                          <button className="square-button">Login</button>
+                          <button className="square-button white">Login</button>
                         </Link>
-                        <button className="signup-button-animate square-button" onClick={this.demoLogin}>Demo Login</button>
+                        <button className="signup-button-animate square-button white" onClick={this.demoLogin}>Demo Login</button>
                     </div>
                 </div>
             </div>
