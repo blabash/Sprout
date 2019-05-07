@@ -14,7 +14,9 @@
  *= require_self
  */
 
- @import "post_bar.scss";
- @import "background.scss";
- @import "login.scss";
+ @import "./api/post_bar.scss";
+ @import "./api/background.scss";
+ @import "./api/login.scss";
+ @import "./api/likes.scss";
+ @import "./api/posts.scss";
  @import "https://assets.tumblr.com/client/prod/app/global.build.css?_v=795c9b285a874a67e02195907325544e";
