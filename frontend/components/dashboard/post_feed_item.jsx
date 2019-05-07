@@ -1,18 +1,24 @@
 import React from 'react';
 
 const PostFeedItem = (props) => {
-  // console.log(props.post)
-  // let postLikes = props.post.likes.map( like => {
-  //   return like['id'] 
-  // })
 
-  // const isLikedByCurrentUser = () => {
-  //   if (postLikes.includes(props.currentUser.id)) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+  const isLikedByCurrentUser = () => {
+    if (props.post.likes.includes(props.currentUser.id)) {
+      return (
+        <button className="feed-item-unlike-button"
+                onClick={() => props.unlike(props.currentUser.id)}>
+          unlike
+        </button>
+      )
+    } else {
+      return (
+        <button className="feed-item-like--button" 
+                onClick={() => props.like(props.currentUser.id, props.post.id)}>
+          like
+        </button>
+      )
+    }
+  }
 
   return (
     <div className="feed-item">
@@ -23,19 +29,12 @@ const PostFeedItem = (props) => {
         <div className="feed-item-title">{props.post.title}</div>
         <div className="feed-item-body">{props.post.body}</div>
         {props.post.post_type}
-      {/* <div className="feed-item-num-likes">
-        {postLikes.length}
-      </div> */}
-      {/* <div className="feed-item-like-unlike">
-        {isLikedByCurrentUser} ? 
-          <button className="feed-item-unlike-button" onClick={props.unlike}>
-            unlike
-          </button>
-          :
-          <button className="feed-item-like--button" onClick={props.like}>
-            like
-          </button>
-      </div> */}
+      <div className="feed-item-num-likes">
+        {props.post.likes.length}
+      </div>
+      <div className="feed-item-like-unlike-buttons">
+        {isLikedByCurrentUser()}
+      </div>
     </div>
   )
 }

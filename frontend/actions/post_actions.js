@@ -6,14 +6,18 @@ export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
 
 
-export const receiveAllPosts = posts => ({
-    type: RECEIVE_ALL_POSTS,
-    posts,
-});
+export const receiveAllPosts = ({posts, likes}) => {
+    return({
+        type: RECEIVE_ALL_POSTS,
+        posts,
+        likes,
+    })
+};
 
-export const receivePost = post => ({
+export const receivePost = ({post, likes}) => ({
     type: RECEIVE_POST,
     post,
+    likes,
 });
 
 export const removePost = id => ({
@@ -23,14 +27,14 @@ export const removePost = id => ({
 
 export const fetchPosts = () => dispatch => (
     PostAPIUtil.fetchPosts().then(
-        posts => dispatch(receiveAllPosts(posts)),
+        payload => dispatch(receiveAllPosts(payload)),
         err => dispatch(receiveErrors(err.responseJSON))
     )
 );
 
 export const fetchPost = (id) => dispatch => (
     PostAPIUtil.fetchPost(id).then(
-        post => dispatch(receivePost(post)),
+        payload => dispatch(receivePost(payload)),
         err => dispatch(receiveErrors(err.responseJSON))
     )
 );

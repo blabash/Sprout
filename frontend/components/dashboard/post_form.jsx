@@ -22,6 +22,10 @@ class PostForm extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        this.props.removeErrors();
+    }
+
     retrievePostForm() {
         let backgroundDiv = document.getElementById("backGroundDiv");
         backgroundDiv.className += "primary-display-div";

@@ -28,6 +28,17 @@ class TextPostForm extends React.Component {
         }
     }
 
+    postButton() {
+        console.log("inside postButton")
+        if (!this.state.title) {
+            console.log("inside postButton disabled")
+            return <button className="disabled-submit-post-form-button" disabled>Post</button>
+        } else {
+            console.log("inside postButton enabled")
+            return <button className="submit-post-form-button" type="submit">Post</button>
+        }
+    }
+
     render() {
         return(
             <div className="text-post-form-container">
@@ -35,29 +46,25 @@ class TextPostForm extends React.Component {
                     {this.props.currentUser.username}
                 </button>
                 <form className="post-form-form" onSubmit={this.handleSubmit}>
-                    <div className="post-form-inputs">
                     <div className="post-form-title">
-                    <input
-                    type="text"
-                    className="post-form-input"
-                    value={this.state.title}
-                    onChange={this.update("title")}
-                    placeholder="Title"
-                    />
+                        <input
+                        type="text"
+                        className="post-form-input"
+                        value={this.state.title}
+                        onChange={this.update("title")}
+                        placeholder="Title"
+                        />
                     </div>
                     <div className="post-form-body">
-                    <input
-                    type="text"
-                    className="post-form-input"
-                    value={this.state.body}
-                    onChange={this.update("body")}
-                    placeholder="Your text here."
-                    />
+                        <input
+                        type="text"
+                        className="post-form-input"
+                        value={this.state.body}
+                        onChange={this.update("body")}
+                        placeholder="Your text here."
+                        />
                     </div>
-                    </div>
-                    <input className="post-form-form-post-button" 
-                        type="submit"
-                        value="Post"/>
+                    {this.postButton()}
                 </form>
                 <button className="post-form-form-close-button"
                         onClick={this.props.closePostForm()}>

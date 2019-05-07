@@ -17,9 +17,6 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-        # print post_params
-        # print @post
-        # derp = Post
         Post.new(post_params)
 
         @post = Post.new(post_params)

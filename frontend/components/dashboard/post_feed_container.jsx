@@ -13,10 +13,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return({
-        like: postId => dispatch(createLike(postId)),
-        unlike: postId => dispatch(removeLike(postId)),
+        like: (user_id, post_id) => dispatch(createLike(user_id, post_id)),
+        unlike: like_id => dispatch(removeLike(like_id)),
         fetchPosts: () => dispatch(fetchPosts()),
-        deletePost: id => dispatch(deletePost(id)),
+        deletePost: post_id => dispatch(deletePost(post_id)),
     })
 }
 
