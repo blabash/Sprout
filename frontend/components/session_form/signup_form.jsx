@@ -28,10 +28,10 @@ class SignUpForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul className="signup-errors">
+            <ul className="login-errors">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}
-                        className="signup-errors-list-animate red"
+                        className="login-errors-list-animate error"
                         >
                         {error}
                     </li>
@@ -67,7 +67,6 @@ class SignUpForm extends React.Component {
                     {motto}
                     <div className="signup-form-idv">
                         <form onSubmit={this.handleSubmit} className="signup-form">
-                            {this.renderErrors()}
                             <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
@@ -80,6 +79,7 @@ class SignUpForm extends React.Component {
                                 className="square-button"
                                 placeholder="Password"
                             />
+                            {this.renderErrors()}
                             <input className="signup-submit-animate square-button blue" type="submit" value="Sign up" />
                         </form>
                     </div>
