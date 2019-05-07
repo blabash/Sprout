@@ -34,15 +34,13 @@ class LogInForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul className="login-errors">
+            <div className="login-errors">
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}
-                        className="login-errors-list-animate red"
-                    >
+                    <div className="login-errors-list-animate error">
                         {error}
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
         );
     }
 
@@ -56,10 +54,9 @@ class LogInForm extends React.Component {
                 <div>
                     <div className="login-main-div-animate">
                         <div className="main-div-animate">
-                            <div className="login-logo-animate sprout-name">sprout</div>
+                            <div className="sprout-name">sprout</div>
                             <div className="login-form-div">
                                 <form onSubmit={this.handleSubmit} className="login-form">
-                                    {this.renderErrors()}
                                     <input type="text"
                                         value={this.state.username}
                                         className="login-input-upper-animate square-button"
@@ -72,6 +69,7 @@ class LogInForm extends React.Component {
                                         onChange={this.update('password')}
                                         placeholder="Password"
                                     />
+                                    {this.renderErrors()}
                                     <input className="login-submit-animate square-button blue" type="submit" value="Log in" />
                                 </form>
                             </div>
@@ -88,13 +86,13 @@ class LogInForm extends React.Component {
                         <div className="sprout-name">sprout</div>
                         <div className="login-form-div">
                             <form onSubmit={this.handleUsername} className="login-form">
-                                {this.renderErrors()}
                             <input type="text"
                                 value={this.state.username}
                                 className="username-submit square-button"
                                 onChange={this.update("username")}
                                 placeholder="Username"
                             />
+                            {this.renderErrors()}
                             <input className="login-submit-animate square-button blue" type="submit" value="Next" />
                             </form>
                         </div>

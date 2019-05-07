@@ -10,9 +10,10 @@
 	background-color: #fff;
 	color: #444;
 	border: 0;
-    height: 32px;
     line-height: 22px;
     margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding-left: 13px;
     padding-right: 13px;
     text-align: center;
@@ -21,6 +22,22 @@
     margin-top: 10px;
     margin-right: 20px;
     border-radius: 2px;
+}
+
+.error {
+	text-align: center;
+	padding: 14px 15px 14px 15px;
+	font-size: 14px;
+    font-family: Helvetica, sans-serif;
+    line-height: 16px;
+    color: #fff;
+    background: rgba(0,0,0,0.33);
+}
+
+.login-errors {
+	float:left;
+	margin-bottom: 12px;
+	width: 100%;
 }
 
 .text-post-form-container {
