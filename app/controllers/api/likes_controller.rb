@@ -11,9 +11,9 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-    @like = Like.find(params[:id])
-
-    if @like && @like.destroy!
+    @like = Like.where({ user_id: current_user.id, post_id: params[:id] })[0]
+    # debugger
+    if @like && @like.destroy
       render json: @like
     else
       render json: ['Could not find that Like'], status: 422

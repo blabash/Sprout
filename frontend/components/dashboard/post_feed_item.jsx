@@ -6,7 +6,7 @@ const PostFeedItem = (props) => {
     if (props.post.likes.includes(props.currentUserId)) {
       return (
         <button className="feed-item-unlike-button"
-                onClick={() => props.unlike(props.)}> 
+          onClick={() => props.unlike(props.post.id)}> 
           unlike
         </button>
       )

@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import PostFeed from "./post_feed";
-import { fetchPosts, deletePost } from '../../actions/post_actions';
+import { fetchPosts, deletePost, updatePost } from '../../actions/post_actions';
 import { createLike, deleteLike } from "../../actions/like_actions";
+
+
 
 const mapStateToProps = state => {
     let posts = Object.values(state.entities.posts)
@@ -14,8 +16,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return({
         like: (user_id, post_id) => dispatch(createLike(user_id, post_id)),
-        unlike: like_id => dispatch(deleteLike(like_id)),
+        unlike: post_id => dispatch(deleteLike(post_id)),
         fetchPosts: () => dispatch(fetchPosts()),
+        updatePost: (post) => dispatch(updatePost(post)),
         deletePost: post_id => dispatch(deletePost(post_id)),
     })
 }

@@ -23,8 +23,8 @@ export const createLike = (user_id, post_id) => dispatch => (
     )
 );
 
-export const deleteLike = like_id => dispatch => (
-    LikeAPIUtil.deleteLike(like_id).then(
+export const deleteLike = post_id => dispatch => (
+    LikeAPIUtil.deleteLike(post_id).then(
         like => dispatch(removeLike(like))
     )
 );
