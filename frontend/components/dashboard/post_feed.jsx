@@ -21,7 +21,7 @@ class PostFeed extends React.Component {
                     post={post}
                     like={this.props.like}
                     unlike={this.props.unlike}
-                    currentUser={this.props.currentUser}
+                    currentUserId={this.props.currentUserId}
                     key={idx} />
             ) 
         }).reverse();

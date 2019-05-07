@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import PostFeed from "./post_feed";
 import { fetchPosts, deletePost } from '../../actions/post_actions';
-import { createLike, removeLike } from "../../actions/like_actions";
+import { createLike, deleteLike } from "../../actions/like_actions";
 
 const mapStateToProps = state => {
     let posts = Object.values(state.entities.posts)
     return({
-        currentUser: state.entities.user,
+        currentUserId: state.session.id,
         posts: posts,
     })
 }
@@ -14,7 +14,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return({
         like: (user_id, post_id) => dispatch(createLike(user_id, post_id)),
-        unlike: like_id => dispatch(removeLike(like_id)),
+        unlike: like_id => dispatch(deleteLike(like_id)),
         fetchPosts: () => dispatch(fetchPosts()),
         deletePost: post_id => dispatch(deletePost(post_id)),
     })

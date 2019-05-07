@@ -3,17 +3,17 @@ import React from 'react';
 const PostFeedItem = (props) => {
 
   const isLikedByCurrentUser = () => {
-    if (props.post.likes.includes(props.currentUser.id)) {
+    if (props.post.likes.includes(props.currentUserId)) {
       return (
         <button className="feed-item-unlike-button"
-                onClick={() => props.unlike(props.currentUser.id)}>
+                onClick={() => props.unlike(props.)}> 
           unlike
         </button>
       )
     } else {
       return (
         <button className="feed-item-like--button" 
-                onClick={() => props.like(props.currentUser.id, props.post.id)}>
+                onClick={() => props.like(props.currentUserId, props.post.id)}>
           like
         </button>
       )
