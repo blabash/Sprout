@@ -1,0 +1,219 @@
+.background {
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: fadeIn ease 3s;
+}
+
+.sign-up-login {
+	background-color: #fff;
+	color: #444;
+	border: 0;
+    line-height: 22px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 13px;
+    padding-right: 13px;
+    text-align: center;
+    vertical-align: top;
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+    border-radius: 2px;
+}
+
+.error {
+	text-align: center;
+	padding: 14px 15px 14px 15px;
+	font-size: 14px;
+    font-family: Helvetica, sans-serif;
+    line-height: 16px;
+    color: #fff;
+    background: rgba(0,0,0,0.33);
+}
+
+.login-errors {
+	float:left;
+	margin-bottom: 12px;
+	width: 100%;
+}
+
+.text-post-form-container {
+  border-radius: 2px;
+  display: inline-block;
+  background: white;
+  width: 540px;
+  text-align: left;
+}
+
+.currentUser-button-post-form {
+  display: table;
+  padding: 10px 15px 10px 20px;
+  box-sizing: border-box;
+}
+
+.post-form-inputs {
+  padding: 0 20px;
+  position: relative;
+}
+
+.post-form-title {
+}
+
+.post-form-title-input {
+  font-family: Gibson,Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 47px;
+  border-color: white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  width: 100%;
+  min-height: 42px;
+  word-wrap: break-word;
+  width: 500px;
+}
+
+.post-form-body-input {
+	font-family: Gibson,Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 47px;
+    box-shadow: none;
+    border-color: white;
+    width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-y: auto;
+word-wrap:break-word;
+}
+
+.white {
+	background: white;
+}
+
+.all-posts {
+    display: inline-block
+}
+
+.feed-centered {
+	text-align: center;
+}
+
+.feed-item {
+	text-align: left;
+	width: 540px;
+	background-color: white;
+	border-radius: 3px;
+	margin: 12px;
+	position: relative;
+}
+
+.feed-item-avatar-image {
+	border-radius: 3px;
+	left: -85px;
+	position: absolute;
+}
+
+.feed-item-title {
+	font-family: Gibson,Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.feed-item-body {
+	padding-right: 20px;
+    padding-left: 20px;
+    font-family: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.signup-main-div-animate,.login-main-div-animate {
+    text-align: center;
+    display: inline-block;
+	position:fixed;
+    width:100%;
+    height:100%;
+	top: 35%;
+	-webkit-transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -o-transition: opacity 2s ease-in;
+    -ms-transition: opacity 2s ease-in;
+    transition: opacity 2s ease-in;
+    -webkit-animation: 1s ease-out 0s 1 slideUp;
+    -moz-animation: 1s ease-out 0s 1 slideUp;
+    -ms-animation: 1s ease-out 0s 1 slideUp;
+    -o-animation: 1s ease-out 0s 1 slideUp;
+    animation: 1s ease-out 0s 1 slideUp, fadeIn ease 1s;
+}
+
+.main-div-animate {
+	display: inline-block;
+	width: 260px;
+}
+
+.sprout-name {
+  color: white;
+  font-size: 4em;
+}
+
+.sprout-motto {
+	margin: 10px 0 16px 0px;
+}
+
+.motto-text {
+  color: white;
+}
+
+.square-button {
+  border-radius: 2px;
+  float: left;
+  border: 0px solid white;
+  width: 100%;
+  padding: 10px 0px;
+  font-size: 1.5em;
+  margin-bottom: 12px;
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+}
+
+.blue {
+	background-color: rgb(0, 184, 255);
+	padding-left: 0px;
+}
+
+// .fade-in {
+//   //animation: fadeIn ease 1s;
+//   //-webkit-animation: fadeIn ease 1s;
+//   // -moz-animation: fadeIn ease 1s;
+//   // -o-animation: fadeIn ease 1s;
+//   // -ms-animation: fadeIn ease 1s;
+// }
+
+.red {
+	color: red;
+}
+
+@keyframes fadeIn{
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(4%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
