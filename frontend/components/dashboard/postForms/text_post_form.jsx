@@ -12,7 +12,7 @@ class TextPostForm extends React.Component {
         })
         this.handleSubmit = this.handleSubmit.bind(this);
 
-        $('#content').on( 'change keyup keydown paste cut', 'textarea', function (){
+        $('#root').on( 'change keyup keydown paste cut', 'textarea', function (){
             $(this).height(0).height(this.scrollHeight);
         }).find( 'textarea' ).change();
     }
@@ -56,7 +56,7 @@ class TextPostForm extends React.Component {
                         placeholder="Title"
                         />
                     </div>
-                    <div className="post-form-body-input">
+                    <div className="post-form-body">
                         <textarea
                         className="post-form-body-input"
                         value={this.state.body}
