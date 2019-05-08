@@ -15,16 +15,21 @@ class PostFeed extends React.Component {
 
     render() {
         let posts = this.props.posts.map((post, idx) => {
-            return(
-                <PostFeedItem
-                    updatePost={this.props.updatePost}
-                    deletePost={this.props.deletePost}
-                    post={post}
-                    like={this.props.like}
-                    unlike={this.props.unlike}
-                    currentUserId={this.props.currentUserId}
-                    key={idx} />
-            ) 
+          let likesForThisPost = this.props.likes.filter((like) => {
+            return like.post_id === post.id
+          })
+          console.log(likesForThisPost);
+          return(
+              <PostFeedItem
+                  likesForThisPost={likesForThisPost}
+                  updatePost={this.props.updatePost}
+                  deletePost={this.props.deletePost}
+                  post={post}
+                  like={this.props.like}
+                  unlike={this.props.unlike}
+                  currentUserId={this.props.currentUserId}
+                  key={idx} />
+          ) 
         }).reverse();
 
         return(

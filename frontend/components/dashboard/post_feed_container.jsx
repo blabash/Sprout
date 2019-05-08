@@ -7,9 +7,11 @@ import { createLike, deleteLike } from "../../actions/like_actions";
 
 const mapStateToProps = state => {
     let posts = Object.values(state.entities.posts)
+    let likes = Object.values(state.entities.likes)
     return({
         currentUserId: state.session.id,
         posts: posts,
+        likes: likes,
     })
 }
 
