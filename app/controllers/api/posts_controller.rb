@@ -17,8 +17,8 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-        @post = Post.new(post_params)
         # debugger
+        @post = Post.new(post_params)
         @post.user_id = current_user.id
 
         if params[:post][:media_element] 
@@ -66,7 +66,7 @@ class Api::PostsController < ApplicationController
 
     private
 
-    def post_params 
+    def post_params
         params.require(:post).permit(:user_id, :title, :post_type, :body, :media_element)
     end
 end
