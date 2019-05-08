@@ -28,6 +28,14 @@ const PostFeedItem = (props) => {
     }
   }
 
+  // const deletePostButton = () => {
+  //   if (props.post.user_id === props.currentUserId) {
+  //     return <button onClick={props.deletePost(props.post.id)}>Delete</button>
+  //   } else {
+  //     return null
+  //   }
+  // }
+
   return (
     <div className="feed-item">
       <div className="feed-item-avatar-image">

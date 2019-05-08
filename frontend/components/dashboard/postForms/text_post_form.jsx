@@ -20,7 +20,7 @@ class TextPostForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         // debugger;
-        this.props.createPost(this.state).then(this.props.closePostForm())
+        this.props.createPost(this.state).then(this.props.closePostForm());
         let backgroundDiv = document.getElementById("backGroundDiv");
         backgroundDiv.className -= "primary-display-div";
     }
@@ -34,12 +34,9 @@ class TextPostForm extends React.Component {
     }
 
     postButton() {
-        console.log("inside postButton")
         if (!this.state.title) {
-            console.log("inside postButton disabled")
             return <button className="disabled-submit-post-form-button" disabled>Post</button>
         } else {
-            console.log("inside postButton enabled")
             return <button className="submit-post-form-button" type="submit">Post</button>
         }
     }

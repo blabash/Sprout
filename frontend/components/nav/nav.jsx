@@ -20,10 +20,12 @@ class Nav extends React.Component {
     }
 
     componentDidMount() {
-        const backGroundDiv = document.getElementById("backGroundDiv");
-        backGroundDiv.setAttribute(
-            "style", `background-image: url(${backgroundPix[this.randomIndex()]})`
-        );
+        if (this.props.location.pathname !== "/posts") {
+            const backGroundDiv = document.getElementById("backGroundDiv");
+            backGroundDiv.setAttribute(
+                "style", `background-image: url(${backgroundPix[this.randomIndex()]})`
+            )
+        }
     }
 
     componentDidUpdate() {

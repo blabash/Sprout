@@ -22,8 +22,7 @@ class PhotoPostForm extends React.Component {
         formData.append('post[media_element]', this.state.photo_file);
         formData.append('post[post_type]', this.state.post_type);
         // debugger
-        this.props.createPost(formData);
-        this.props.closePostForm();
+        this.props.createPost(formData).then(this.props.closePostForm());
         let backgroundDiv = document.getElementById("backGroundDiv");
         backgroundDiv.className -= "primary-display-div";
     }

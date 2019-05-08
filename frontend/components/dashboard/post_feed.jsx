@@ -17,7 +17,8 @@ class PostFeed extends React.Component {
         let posts = this.props.posts.map((post, idx) => {
             return(
                 <PostFeedItem
-                    update={this.props.update}
+                    updatePost={this.props.updatePost}
+                    deletePost={this.props.deletePost}
                     post={post}
                     like={this.props.like}
                     unlike={this.props.unlike}
