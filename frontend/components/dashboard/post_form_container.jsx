@@ -7,7 +7,7 @@ import { removeErrors } from "../../actions/error_actions";
 const mapStateToProps = state => {
     let currentUserId = state.session.id;
     return({
-        currentUser: state.entities.user[currentUserId],
+        currentUser: state.entities.users[currentUserId],
         errors: state.errors.posts
     })
 }

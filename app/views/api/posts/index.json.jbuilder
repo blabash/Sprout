@@ -11,6 +11,15 @@ json.posts do
     end
 end
 
+json.users do 
+    @posts.each do |post|
+        json.set! post.user.id do
+            json.extract! post.user, :id, :username
+            json.profile_pic url_for(post.user.profile_pic)
+        end
+    end
+end
+
 
 json.likes do
     @posts.each do |post|
