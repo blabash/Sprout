@@ -3,7 +3,7 @@ class Api::PostsController < ApplicationController
 
     def index
         @posts = Post.all
-
+        # debugger
         if @posts
             render 'api/posts/index'
         else
@@ -17,14 +17,13 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-        Post.new(post_params)
-
         @post = Post.new(post_params)
+        # debugger
         @post.user_id = current_user.id
 
-        # if params[:media_element] 
-        #     @post.media_element.attach(params[:media_element])
-        # end
+        if params[:post][:media_element] 
+            @post.media_element.attach(params[:post][:media_element])
+        end
 
         if @post.save
             render 'api/posts/show'

@@ -20,6 +20,14 @@ const PostFeedItem = (props) => {
     }
   }
 
+  const displayPostMedia = () => {
+    if (props.post.mediaUrl) {
+      return(
+        <img src={props.post.mediaUrl}/> //only image (<img/> tag) display functionality for now, needs updating for other media types
+      )
+    }
+  }
+
   return (
     <div className="feed-item">
       <div className="feed-item-avatar-image">
@@ -27,10 +35,13 @@ const PostFeedItem = (props) => {
           height="64" width="64"/>
       </div>
         <div className="feed-item-title">{props.post.title}</div>
+      <div className="photo-post-img">
+        {displayPostMedia()}
+      </div>
         <div className="feed-item-body">{props.post.body}</div>
-        {props.post.post_type}
+        {/* {props.post.post_type} */}
       <div className="feed-item-num-likes">
-        {props.post.likes.length}
+        {props.post.likes.length} notes
       </div>
       <div className="feed-item-like-unlike-buttons">
         {isLikedByCurrentUser()}

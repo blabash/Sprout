@@ -1,5 +1,6 @@
 import React from 'react';
 import TextPostForm from './postForms/text_post_form';
+import PhotoPostForm from "./postForms/photo_post_form";
 
 class PostForm extends React.Component {
     constructor(props) {
@@ -38,7 +39,7 @@ class PostForm extends React.Component {
                             closePostForm={this.closePostForm.bind(this)}
                         />
             case "photo":
-                return <TextPostForm 
+                return <PhotoPostForm 
                             currentUser={this.props.currentUser}
                             createPost={this.props.createPost}
                             closePostForm={this.closePostForm.bind(this)}

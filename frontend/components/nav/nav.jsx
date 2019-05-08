@@ -26,12 +26,16 @@ class Nav extends React.Component {
         );
     }
 
-    // componentDidUpdate() {
-    //     const backGroundDiv = document.getElementById("backGroundDiv");
-    //     backGroundDiv.setAttribute(
-    //         "style", `background-image: url(${backgroundPix[this.randomIndex()]})`
-    //     );
-    // }
+    componentDidUpdate() {
+        const backGroundDiv = document.getElementById("backGroundDiv");
+        if (this.props.location.pathname === "/posts") {
+            backGroundDiv.removeAttribute("style")
+        } else {
+            backGroundDiv.setAttribute(
+                "style", `background-image: url(${backgroundPix[this.randomIndex()]})`
+            );
+        }
+    }
 
     render() {
         let mainButton = null;

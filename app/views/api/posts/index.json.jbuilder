@@ -3,11 +3,10 @@ json.posts do
         json.set! post.id do
             json.extract! post, :id, :user_id, :title, :post_type, :body
             json.username post.user.username
+            json.mediaUrl url_for(post.media_element) if post.media_element.attached?
             json.likes do #change to likers
                 json.array! post.likes.map { |like| like.user_id } 
             end
-            # json.media url_for(@post.media) if @post.media.attached?
-            # json.media_type @post.media.content_type[0, 5] if @post.media.attached?
         end
     end
 end
