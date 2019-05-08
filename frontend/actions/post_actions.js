@@ -20,9 +20,9 @@ export const receivePost = ({post, likes}) => ({
     likes,
 });
 
-export const removePost = id => ({
+export const removePost = post => ({
     type: REMOVE_POST,
-    postId: id,
+    postId: post.id
 });
 
 export const fetchPosts = () => dispatch => (
@@ -55,7 +55,7 @@ export const updatePost = (post) => dispatch => (
 
 export const deletePost = (id) => dispatch => (
     PostAPIUtil.deletePost(id).then(
-        post => dispatch(removePost(post.id)),
+        post => dispatch(removePost(post)),
         err => dispatch(receiveErrors(err.responseJSON))
     )
 );

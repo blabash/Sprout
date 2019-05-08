@@ -48,19 +48,15 @@ class Api::PostsController < ApplicationController
     end
 
     def destroy
-        print current_user
         @post = nil
-        @post = Post.where(user_id: current_user.id).find(params[:id])
+        # @post = Post.where(user_id: current_user.id).find(params[:id])
+        @post = Post.find(params[:id])
         
-        if @post
-            if @post.destroy!
-                # @posts = Post.all
-                render 'api/posts/show'
-            else
-                render json: @post.errors.full_messages, status: 422
-            end
+        if @post.destroy!
+            # render 'api/posts/show'
+            render json: @post
         else
-            render json: ["Trying to delete someone else's post, tsk tsk"], status: 422
+            render json: @post.errors.full_messages, status: 422
         end
     end
 
