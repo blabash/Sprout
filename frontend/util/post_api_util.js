@@ -20,9 +20,13 @@ export const createPost = (post) => {
     const request = {
         method: "POST",
         url: 'api/posts',
-        data: post,
-        contentType: false,
-        processData: false,
+        data: { post },
+    }
+    // debugger
+    if (post.getAll) { //this is hackey way of determing whether this has media_element
+        request.data = post; //for some reason media_element posts only works when post is not wrapped in {}
+        request.contentType = false;
+        request.processData = false;
     }
 
     return $.ajax(request);
