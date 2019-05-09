@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import PostFeed from "./post_feed";
 import { fetchPosts, deletePost, updatePost } from '../../actions/post_actions';
 import { createLike, deleteLike } from "../../actions/like_actions";
+import { openModal, closeModal } from "../../actions/modal_actions";
 
 
 
@@ -14,6 +15,7 @@ const mapStateToProps = state => {
         posts: posts,
         likes: likes,
         users: users,
+        modal: state.ui.modal
     })
 }
 
@@ -24,6 +26,8 @@ const mapDispatchToProps = dispatch => {
         fetchPosts: () => dispatch(fetchPosts()),
         updatePost: (post) => dispatch(updatePost(post)),
         deletePost: post_id => dispatch(deletePost(post_id)),
+        openModal: () => dispatch(openModal()),
+        closeModal: () => dispatch(closeModal())
     })
 }
 

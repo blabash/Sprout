@@ -30,6 +30,9 @@ class PostFeed extends React.Component {
                   like={this.props.like}
                   unlike={this.props.unlike}
                   currentUserId={this.props.currentUserId}
+                  modal={this.props.modal}
+                  openModal={this.props.openModal}
+                  closeModal={this.props.closeModal}
                   key={idx} />
           ) 
         }).reverse();

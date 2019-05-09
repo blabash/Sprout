@@ -40,7 +40,7 @@ class PhotoPostForm extends React.Component {
     }
 
     postButton() {
-        if (!this.state.caption) {
+        if (!this.state.caption || !this.state.photo_file) {
             return <button className="disabled-submit-post-form-button" disabled>Post</button>
         } else {
             return <button className="submit-post-form-button" type="submit">Post</button>
@@ -64,7 +64,7 @@ class PhotoPostForm extends React.Component {
                             className="photo-post-form-caption-input"
                             value={this.state.caption}
                             onChange={this.update("caption")}
-                            placeholder="Add a caption, if you like"
+                            placeholder="Add a caption"
                         />
                     </div>
                     {this.postButton()}

@@ -5,10 +5,10 @@ class EditPostForm extends React.Component {
         super(props);
 
         this.state = ({
-            user_id: this.props.currentUser.id,
-            title: "",
-            body: "",
-            post_type: "text",
+            id: this.props.post.id,
+            title: this.props.post.title,
+            body: this.props.post.body,
+            post_type: this.props.post.post_type,
         })
         this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -20,9 +20,7 @@ class EditPostForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         // debugger;
-        this.props.createPost(this.state).then(this.props.closePostForm());
-        let backgroundDiv = document.getElementById("backGroundDiv");
-        // backgroundDiv.className -= "primary-display-div";
+        this.props.updatePost(this.state).then(this.props.closeModal());
     }
 
     update(field) {
@@ -42,36 +40,40 @@ class EditPostForm extends React.Component {
     }
 
     render() {
-        return (
-            <div className="text-post-form-container">
-                <button className="currentUser-button-post-form">
-                    {this.props.currentUser.username}
-                </button>
-                <form className="post-form-form" onSubmit={this.handleSubmit}>
-                    <div className="post-form-title">
-                        <textarea
-                            className="post-form-title-input"
-                            value={this.state.title}
-                            onChange={this.update("title")}
-                            placeholder="Title"
-                        />
-                    </div>
-                    <div className="post-form-body">
-                        <textarea
-                            className="post-form-body-input"
-                            value={this.state.body}
-                            onChange={this.update("body")}
-                            placeholder="Your text here."
-                        />
-                    </div>
-                    {this.postButton()}
-                </form>
-                <button className="post-form-form-close-button"
-                    onClick={this.props.closePostForm()}>
-                    Close
-                </button>
-            </div>
-        )
+        if(this.props.modal){
+            return (
+                <div className="text-post-form-container">
+                    <button className="currentUser-button-post-form">
+                        {this.props.postOwner.username}
+                    </button>
+                    <form className="post-form-form" onSubmit={this.handleSubmit}>
+                        <div className="post-form-title">
+                            <textarea
+                                className="post-form-title-input"
+                                value={this.state.title}
+                                onChange={this.update("title")}
+                                // placeholder="Title"
+                            />
+                        </div>
+                        <div className="post-form-body">
+                            <textarea
+                                className="post-form-body-input"
+                                value={this.state.body}
+                                onChange={this.update("body")}
+                                // placeholder="Your text here."
+                            />
+                        </div>
+                        {this.postButton()}
+                    </form>
+                    <button className="post-form-form-close-button"
+                        onClick={this.props.closeModal}>
+                        Close
+                    </button>
+                </div>
+            )
+        } else {
+            return null;
+        }
     }
 }
 
