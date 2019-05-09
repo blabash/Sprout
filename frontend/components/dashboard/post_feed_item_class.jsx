@@ -32,9 +32,16 @@ class PostFeedItemClass extends React.Component {
     }
 
     displayPostMedia() {
+        // debugger
         if (this.props.post.mediaUrl) {
             return (
-                <img src={this.props.post.mediaUrl} /> //only image (<img/> tag) display functionality for now, needs updating for other media types
+                <div className="photo-post-img">
+                    <img src={this.props.post.mediaUrl} />
+                </div>
+            )
+        } else {
+            return (
+                <div className="feed-item-title">{this.props.post.title}</div>
             )
         }
     }
@@ -87,10 +94,7 @@ class PostFeedItemClass extends React.Component {
                 <div className="post-feed-post-owner-username">
                     {this.props.postOwner.username}
                 </div>
-                <div className="feed-item-title">{this.props.post.title}</div>
-                <div className="photo-post-img">
-                    {this.displayPostMedia()}
-                </div>
+                {this.displayPostMedia()}
                 <div className="feed-item-body">{this.props.post.body}</div>
                 <div className="feed-item-num-likes">
                     {this.props.likesForThisPost.length} notes

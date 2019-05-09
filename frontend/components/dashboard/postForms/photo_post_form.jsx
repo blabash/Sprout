@@ -7,6 +7,7 @@ class PhotoPostForm extends React.Component {
         super(props);
 
         this.state = ({
+            title: "dummy title of photo",
             user_id: this.props.currentUser.id,
             caption: "",
             post_type: "photo",
@@ -18,7 +19,8 @@ class PhotoPostForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('post[title]', this.state.caption);
+        formData.append('post[title]', this.state.title);
+        formData.append('post[body]', this.state.caption);
         formData.append('post[media_element]', this.state.photo_file);
         formData.append('post[post_type]', this.state.post_type);
         // debugger
@@ -64,7 +66,7 @@ class PhotoPostForm extends React.Component {
                             className="photo-post-form-caption-input"
                             value={this.state.caption}
                             onChange={this.update("caption")}
-                            placeholder="Add a caption"
+                            placeholder="Add a caption, if you like"
                         />
                     </div>
                     {this.postButton()}
