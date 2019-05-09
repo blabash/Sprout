@@ -43,6 +43,9 @@ const PostFeedItem = (props) => {
 
   return (
     <div className="feed-item">
+      <div className="post-feed-post-owner-username">
+        {props.postOwner.username}
+      </div>
       <div className="feed-item-avatar-image">
           <img src={props.postOwner.profile_pic} height="64" width="64"/>
       </div>
