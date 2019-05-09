@@ -45,29 +45,30 @@ const PostFeedItem = (props) => {
 
   return (
     <div className="feed-item">
-      <div className="post-feed-post-owner-username">
-        {props.postOwner.username}
-      </div>
       <div className="feed-item-avatar-image">
-          <img src={props.postOwner.profile_pic} height="64" width="64"/>
+	    <img src={props.postOwner.profile_pic} height="64" width="64"/>
+	  </div>
+      <div className="feed-content">
+	      <div className="post-feed-post-owner-username">
+	        {props.postOwner.username}
+	      </div>
+	        <div className="feed-item-title">{props.post.title}</div>
+	      <div className="photo-post-img">
+	        {displayPostMedia()}
+	      </div>
+	        <div className="feed-item-body">{props.post.body}</div>
+	        {/* {props.post.post_type} */}
+	      <div className="feed-item-num-likes">
+	        {props.likesForThisPost.length} notes
+	      </div>
+	      <div className="feed-item-like-unlike-buttons">
+	        {isLikedByCurrentUser()}
+	      </div>
+	      <div className="feed-item-reblog-button">
+	        <i className="icon_reblog"/>
+	      </div>
+	      {deletePostButton()}
       </div>
-        <div className="feed-item-title">{props.post.title}</div>
-      <div className="photo-post-img">
-        {displayPostMedia()}
-      </div>
-        <div className="feed-item-body">{props.post.body}</div>
-        {/* {props.post.post_type} */}
-      <div className="feed-item-num-likes">
-        {props.likesForThisPost.length} notes
-      </div>
-      <div className="feed-item-like-unlike-buttons">
-        {isLikedByCurrentUser()}
-      </div>
-      <div className="feed-item-reblog-button">
-        <i className="icon_reblog"/>
-      </div>
-      
-      {deletePostButton()}
     </div>
   )
 }

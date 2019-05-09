@@ -6,10 +6,6 @@
   animation: fadeIn ease 3s;
 }
 
-.feed-item {
-	overflow: hidden;
-}
-
 .post-feed-post-owner-username {
 	padding-right: 20px;
     padding-left: 20px;
@@ -228,6 +224,7 @@
 	border-radius: 3px;
 	margin: 12px;
 	position: relative;
+	overflow: hidden;
 }
 
 .feed-item-avatar-image {
