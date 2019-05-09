@@ -24,7 +24,7 @@ class PhotoPostForm extends React.Component {
         // debugger
         this.props.createPost(formData).then(this.props.closePostForm());
         let backgroundDiv = document.getElementById("backGroundDiv");
-        backgroundDiv.className -= "primary-display-div";
+        // backgroundDiv.className -= "primary-display-div";
     }
 
     update(field) {
