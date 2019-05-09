@@ -1,10 +1,10 @@
 class User < ApplicationRecord
   PROFILE_PIX = [
-    "app/assets/images/avatar_1.png",
-    "app/assets/images/avatar_2.jpg",
-    "app/assets/images/avatar_3.png",
-    "app/assets/images/avatar_4.jpg",
-    "app/assets/images/avatar_5.jpg"
+    "app/assets/images/profile_pic_1.png",
+    "app/assets/images/profile_pic_2.jpg",
+    "app/assets/images/profile_pic_3.png",
+    "app/assets/images/profile_pic_4.jpg",
+    "app/assets/images/profile_pic_5.jpg"
   ]
 
   attr_reader :password

@@ -9,19 +9,19 @@
 ActiveRecord::Base.transaction do
     
     Like.destroy_all
-    
+    Post.destroy_all
     User.destroy_all
 
-
     #Users
+    demoUser = User.create(username: "demoUser", password: "userDemo")
 
     #Posts
+    post1 = Post.create(user_id: demoUser.id, title: "My first post!", 
+        body: "Testing out my new sprout account", post_type: "text")
 
     #Likes
+    like1 = Like.create(user_id: demoUser.id, post_id: post1.id)
 
-    #Follows
-
-    #start with Users and go down dependencies so you have the foreign keys available
 
 
 
