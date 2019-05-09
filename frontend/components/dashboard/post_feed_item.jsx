@@ -8,16 +8,16 @@ const PostFeedItem = (props) => {
   const isLikedByCurrentUser = () => {
     if (likeUserIds.includes(props.currentUserId)) {
       return (
-        <button className="feed-item-unlike-button"
+        <button className="feed-item-like-button"
                 onClick={() => props.unlike(props.post.id)}> 
-                unlike
+                <i className="icon_like red"/>
         </button>
       )
     } else {
       return (
         <button className="feed-item-like-button" 
                 onClick={() => props.like(props.currentUserId, props.post.id)}>
-                like
+                <i className="icon_like"/>
         </button>
       )
     }
@@ -34,7 +34,9 @@ const PostFeedItem = (props) => {
   const deletePostButton = () => {
     if (props.post.user_id === props.currentUserId) {
       return (
-      <button onClick={() => props.deletePost(props.post.id)}>Delete</button>
+      	<div className="feed-item-delete-button">
+          <button onClick={() => props.deletePost(props.post.id)}><i className="icon_delete"/></button>
+        </div>
       )
     } else {
       return null
@@ -61,6 +63,10 @@ const PostFeedItem = (props) => {
       <div className="feed-item-like-unlike-buttons">
         {isLikedByCurrentUser()}
       </div>
+      <div className="feed-item-reblog-button">
+        <i className="icon_reblog"/>
+      </div>
+      
       {deletePostButton()}
     </div>
   )
