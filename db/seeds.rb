@@ -22,7 +22,4 @@ ActiveRecord::Base.transaction do
     #Likes
     like1 = Like.create(user_id: demoUser.id, post_id: post1.id)
 
-
-
-
 end
