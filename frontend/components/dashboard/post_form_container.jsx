@@ -5,9 +5,8 @@ import { withRouter } from 'react-router-dom'
 import { removeErrors } from "../../actions/error_actions";
 
 const mapStateToProps = state => {
-    let currentUserId = state.session.id;
     return({
-        currentUser: state.entities.users[currentUserId],
+        currentUser: state.session.id,
         errors: state.errors.posts
     })
 }

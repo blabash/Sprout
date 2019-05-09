@@ -1,5 +1,5 @@
 import React from 'react';
-import PostFeedItem from './post_feed_item';
+import PostFeedItemClass from './post_feed_item_class';
 import PostFormContainer from './post_form_container';
 import { withRouter } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ class PostFeed extends React.Component {
             return user.id === post.user_id
           })[0]
           return(
-              <PostFeedItem
+              <PostFeedItemClass
                   postOwner={postOwner}
                   likesForThisPost={likesForThisPost}
                   updatePost={this.props.updatePost}
