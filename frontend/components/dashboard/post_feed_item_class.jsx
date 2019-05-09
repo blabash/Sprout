@@ -44,16 +44,16 @@ class PostFeedItemClass extends React.Component {
         }
     }
 
-    displayInteractionButtonsButton() {
+    displayInteractionButtons() {
         if (this.props.post.user_id === this.props.currentUserId) {
             return (
                 <div className="post-feed-item-buttons">
                     <button className="post-edit-button">Edit</button>
 
-                    {/* <button onClick={this.props.deletePost(this.props.post.id)} 
+                    <button onClick={() => this.props.deletePost(this.props.post.id)} 
                             className="post-delete-button">
                             Delete
-                    </button> */}
+                    </button>
                 </div>
             )
         } else {
@@ -88,7 +88,7 @@ class PostFeedItemClass extends React.Component {
                 <div className="feed-item-like-unlike-buttons">
                     {this.isLikedByCurrentUser()}
                 </div>
-                {this.displayInteractionButtonsButton()}
+                {this.displayInteractionButtons()}
             </div>
         )
     }
