@@ -1,4 +1,5 @@
 import React from 'react';
+import EditPostForm from './edit_post_form';
 
 const PostFeedItem = (props) => {
   const likeUserIds = props.likesForThisPost.map((like) => {
