@@ -78,12 +78,6 @@ class PostFeedItemClass extends React.Component {
         }
     }
 
-    // interactionButtons() {
-    //     if (this.state.interactionButtons) {
-    //         return <button>Derp</button>
-    //     }
-    // }
-
     render() {
         return (
             <div className="feed-item">
@@ -92,8 +86,7 @@ class PostFeedItemClass extends React.Component {
               </div>
               <div className="feed-content">
                 <div className="post-feed-post-owner-username">
-                    Here's a blog:&nbsp;
-                    {this.props.postOwner.username}
+                    <div>{this.props.postOwner.username}</div>
                 </div>
                 {this.displayPostMedia()}
                 <div className="feed-item-body">{this.props.post.body}</div>
