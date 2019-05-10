@@ -7,7 +7,8 @@ import { removeErrors } from "../../actions/error_actions";
 const mapStateToProps = state => {
     return({
         currentUser: state.session.id,
-        errors: state.errors.posts
+        errors: state.errors.posts,
+        currentUserProfilePic: state.entities.users[state.session.id].profile_pic,
     })
 }
 

@@ -84,6 +84,12 @@ class PostForm extends React.Component {
 
         return (
             <div className="new-post-form">
+                <div className="feed-item-avatar adjustup">
+                    <img src={this.props.currentUserProfilePic} 
+                         className="feed-item-avatar-image"
+                         height="64"
+                         width="64"/>
+                </div>
                 <a className="text-post-button i-element" onClick={this.changePostType("text")}>
                     <i className="text-icon icon-post icon_post_text"></i>
                     <div className="text-icon-text">Text</div>
