@@ -57,6 +57,11 @@ class EditPostForm extends React.Component {
                                         // placeholder="Title"
                                     />
                                 </div>
+                                <div className="photo-post-img">
+                                    {this.props.post.post_type === "photo" ?
+                                        <img src={this.props.post.mediaUrl}/> : null
+                                    }
+                                </div>
                                 <div className="post-form-body">
                                     <textarea
                                         className="post-form-body-input"
