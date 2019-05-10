@@ -40,10 +40,10 @@ ActiveRecord::Base.transaction do
 
     post1 = Post.create(user_id: demoUser.id, title: "My first post!", 
         body: "Testing out my new sprout account", post_type: "text")
-    post2 = Post.create(user_id: user1.id, title: "And so being young dipped in folly I fell in love with melancholy.", 
+    post2 = Post.create(user_id: user1.id, title: "And so being young and dipped in folly I fell in love with melancholy.", 
         body: "-Edgar Allen Poe", post_type: "text")
-    post3 = Post.create(user_id: user2.id, title: "Went to laser tag today", 
-        body: "My friend was a really good partner.  She's tiny so she's allowed to push kids.", post_type: "text")
+    post3 = Post.create(user_id: user2.id, title: "Went to laser tag today. My friend was a really good partner.  She's tiny so she's allowed to push kids.", 
+        body: "", post_type: "text")
     post4 = Post.create(user_id: user3.id, title: "Sharpening a pencil at the bin was the childhood equivalent of taking a cigarette break.", 
         body: "You gotta make sure it's extra sharp", post_type: "text")
     post5 = Post.create(user_id: user4.id, title: "Can't get any work done today, I've been watching dancing pikachu for the last 3 hours", 
