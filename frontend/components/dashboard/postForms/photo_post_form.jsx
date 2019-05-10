@@ -7,6 +7,7 @@ class PhotoPostForm extends React.Component {
         super(props);
 
         this.state = ({
+            title: "dummy title of photo",
             user_id: this.props.currentUser.id,
             caption: "",
             post_type: "photo",
@@ -18,7 +19,8 @@ class PhotoPostForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('post[title]', this.state.caption);
+        formData.append('post[title]', this.state.title);
+        formData.append('post[body]', this.state.caption);
         formData.append('post[media_element]', this.state.photo_file);
         formData.append('post[post_type]', this.state.post_type);
         // debugger
@@ -40,7 +42,7 @@ class PhotoPostForm extends React.Component {
     }
 
     postButton() {
-        if (!this.state.caption) {
+        if (!this.state.caption || !this.state.photo_file) {
             return <button className="disabled-submit-post-form-button" disabled>Post</button>
         } else {
             return <button className="submit-post-form-button" type="submit">Post</button>

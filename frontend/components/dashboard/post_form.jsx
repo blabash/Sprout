@@ -15,8 +15,6 @@ class PostForm extends React.Component {
 
     closePostForm() {
         return e => {
-            let backgroundDiv = document.getElementById("backGroundDiv");
-            // backgroundDiv.className -= "primary-display-div";
             this.setState({
                 postType: "unselected",
             })
@@ -28,8 +26,6 @@ class PostForm extends React.Component {
     }
 
     retrievePostForm() {
-        let backgroundDiv = document.getElementById("backGroundDiv");
-        // backgroundDiv.className += "primary-display-div";
 
         switch (this.state.postType) {
             case "text":

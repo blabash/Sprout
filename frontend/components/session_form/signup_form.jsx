@@ -23,7 +23,6 @@ class SignUpForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.signup(user);
-        // this.props.closeGetStarted(); this is making the whole page refresh on new user sign up, no good if there are errors
     }
 
     renderErrors() {

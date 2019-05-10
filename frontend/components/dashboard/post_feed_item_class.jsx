@@ -5,11 +5,6 @@ class PostFeedItemClass extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            // interactionButtons: false,
-            editFormOpen: false
-        }
-
         this.isLikedByCurrentUser = this.isLikedByCurrentUser.bind(this);
         this.displayPostMedia = this.displayPostMedia.bind(this);
     }
@@ -37,18 +32,40 @@ class PostFeedItemClass extends React.Component {
     }
 
     displayPostMedia() {
+        // debugger
         if (this.props.post.mediaUrl) {
             return (
-                <img src={this.props.post.mediaUrl} /> //only image (<img/> tag) display functionality for now, needs updating for other media types
+                <div className="photo-post-img">
+                    <img src={this.props.post.mediaUrl} />
+                </div>
+            )
+        } else {
+            return (
+                <div className="feed-item-title">{this.props.post.title}</div>
             )
         }
+    }
+
+    displayEditPostForm() {
+            return(
+                <EditPostForm postOwner={this.props.postOwner}
+                            updatePost={this.props.updatePost}
+                            post={this.props.post}
+                            modal={this.props.modal}
+                            openModal={this.props.openModal}
+                            closeModal={this.props.closeModal}
+                />
+            )
     }
 
     displayInteractionButtons() {
         if (this.props.post.user_id === this.props.currentUserId) {
             return (
                 <div className="post-feed-item-buttons">
-                    <button className="feed-item-icon-button"><i className="icon_edit"/></button>
+                    <button className="feed-item-icon-button"
+                            onClick={this.props.openModal}>
+                            <i className="icon_edit"/>
+                    </button>
 
                     <button onClick={() => this.props.deletePost(this.props.post.id)} 
                             className="feed-item-icon-button">
@@ -77,12 +94,8 @@ class PostFeedItemClass extends React.Component {
                 <div className="post-feed-post-owner-username">
                     {this.props.postOwner.username}
                 </div>
-                <div className="feed-item-title">{this.props.post.title}</div>
-                <div className="photo-post-img">
-                    {this.displayPostMedia()}
-                </div>
+                {this.displayPostMedia()}
                 <div className="feed-item-body">{this.props.post.body}</div>
-                {/* {this.props.post.post_type} */}
                 <div className="feed-item-num-likes">
                     {this.props.likesForThisPost.length} notes
       </div>
@@ -93,6 +106,7 @@ class PostFeedItemClass extends React.Component {
                     <i className="icon_reblog"/>
                 </div>
                 {this.displayInteractionButtons()}
+                {this.displayEditPostForm()}
               </div>
             </div>
         )

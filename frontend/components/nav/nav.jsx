@@ -29,7 +29,7 @@ class Nav extends React.Component {
         const backGroundDiv = document.getElementById("backGroundDiv");
         if (this.props.location.pathname === "/posts") {
             backGroundDiv.removeAttribute("style")
-        } else {
+        } else if (this.props.location.pathname !== "/login") {
             backGroundDiv.setAttribute(
                 "style", `background-image: url(${backgroundPix[this.randomIndex()]})`
             );
@@ -43,22 +43,28 @@ class Nav extends React.Component {
                             className="nav-logo-link-to-home">
                             <img
                                 src="https://lh3.googleusercontent.com/i-FzlbTJ4s_t0Ql_iggTAXRdi4r-lFD8bO_cy7E0-wXyYnHm3jvZmZzd9jQAbzPE_HloeHouI6A=w128-h128-e365"
-                                className="nav-logo-link-to-home-img">
-                            </img>
+                                className="nav-logo-link-to-home-img"
+                                height="64"
+                                width="64"
+                            />
                         </Link>;
+        let navBar = document.getElementById("nav-bar");
 
         if (this.props.location.pathname === "/login") {
             mainButton = <Link to="/signup" className="nav-signup-button"><button className="sign-up-login">Sign up</button></Link>;
+            // navBar.classList.remove("main-nav")
         } else if (this.props.location.pathname === "/signup") {
             mainButton = <Link to="/login" className="nav-login-button"><button className="sign-up-login">Log in</button></Link>;
         } else if (this.props.location.pathname ==="/posts") {
             mainButton = <button  className="sign-up-login" onClick={this.props.logout}>Log out</button>;
+            // navBar.classList.add("main-nav")
         } else if (this.props.location.pathname === "/" && this.props.getStarted) {
             mainButton = <Link to="/login" className="nav-login-button"><button className="sign-up-login">Log in</button></Link>; 
         }
 
+        
         return (
-            <nav className="main-nav">
+            <nav id="nav-bar">
                 {logoButton}
                 {mainButton}
             </nav>
