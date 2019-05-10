@@ -92,6 +92,7 @@ class PostFeedItemClass extends React.Component {
               </div>
               <div className="feed-content">
                 <div className="post-feed-post-owner-username">
+                    Here's a blog:&nbsp;
                     {this.props.postOwner.username}
                 </div>
                 {this.displayPostMedia()}
