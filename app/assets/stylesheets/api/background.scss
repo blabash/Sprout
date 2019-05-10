@@ -7,21 +7,21 @@
 }
 
 
-.main-nav {
-  border-bottom: 1px solid rgb(78, 79, 83);
-  z-index: 200;
-}
-
-
 .post-feed-post-owner-username {
   padding-right: 20px;
-    padding-left: 20px;
-    font-size: 13px;
-    margin-bottom: 13px;
-    line-height: 20px;
-    height: 20px;
-    color: rgba(0,0,0,0.65);
-    padding-top: 13px;
+  padding-left: 20px;
+  font-size: 13px;
+  margin-bottom: 13px;
+  line-height: 20px;
+  height: 20px;
+  color: rgba(0,0,0,0.65);
+  padding-top: 13px;
+  font-family: Gibson,Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+}
+
+.post-feed-post-owner-username div {
+  display: inline-block;
+  font-weight: bold;
 }
 
 .feed-item-title {
@@ -45,12 +45,13 @@
 }
 
 .feed-item-num-likes {
+  padding-top: 10px;
   padding-right: 20px;
-    padding-left: 20px;
-    font-size: 14px;
-    line-height: 21px;
-    color: rgba(0,0,0,0.65);
-    float: left;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgba(0,0,0,0.65);
+  float: left;
 }
 
 .feed-item-icon-button {
@@ -58,6 +59,7 @@
   font-size: 25px;
   margin-right: 15px;
   margin-bottom: 10px;
+  color: gray;
 }
 
 .feed-item-reblog-button {
@@ -115,8 +117,8 @@
 }
 
 .sign-up-login {
-  background-color: #fff;
-  color: #444;
+  background-color: rgb(0, 184, 255);
+  color: black;
   border: 0;
     line-height: 22px;
     margin-right: 10px;
@@ -127,9 +129,10 @@
     text-align: center;
     vertical-align: top;
     float: right;
-    margin-top: 10px;
+    margin-top: 35px;
     margin-right: 20px;
     border-radius: 2px;
+    font-size: 14px;
 }
 
 .error {
@@ -214,7 +217,10 @@
 }
 
 .feed-centered {
+  padding-top: 15px;
   text-align: center;
+  border-top: 1px solid rgb(82, 82, 83);
+  z-index: 200;
 }
 
 .feed-item {
@@ -312,6 +318,34 @@
 .red {
   color: red;
 }
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  -webkit-transition: opacity 2s ease-in;
+  -moz-transition: opacity 2s ease-in;
+  -o-transition: opacity 2s ease-in;
+  -ms-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+  -webkit-animation: 1s ease-out 0s;
+  -moz-animation: 1s ease-out 0s;
+  -ms-animation: 1s ease-out 0s;
+  -o-animation: 1s ease-out 0s;
+  animation: 1s ease-out 0s, fadeIn ease 1s;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 @keyframes fadeIn{
     from { opacity: 0; }

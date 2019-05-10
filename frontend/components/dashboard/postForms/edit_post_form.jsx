@@ -4,17 +4,21 @@ class EditPostForm extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = ({
-            id: this.props.post.id,
-            title: this.props.post.title,
-            body: this.props.post.body,
-            post_type: this.props.post.post_type,
-        })
+        // this.state = ({
+        //     title: this.props.post.title,
+        //     body: this.props.post.body,
+        // })
         this.handleSubmit = this.handleSubmit.bind(this);
-
+        this.displayMedia = this.displayMedia.bind(this);
         $('#root').on('change keyup keydown paste cut', 'textarea', function () {
             $(this).height(0).height(this.scrollHeight);
         }).find('textarea').change();
+    }
+
+    componentDidUpdate() {
+        this.props.fetchPost(this.props.postId).then(() => {
+            this.setState(this.props.post)
+        })
     }
 
     handleSubmit(e) {
@@ -39,14 +43,23 @@ class EditPostForm extends React.Component {
         }
     }
 
+    displayMedia() {
+        if(this.props.post.post_type === "photo") {
+            return <img src={this.props.post.mediaUrl} />
+        } else {
+            return null
+        }
+    }
+
     render() {
-        if(this.props.modal){
+        debugger
+        if(this.props.isOpen){
             return (
                 <div className="modal-background" onClick={this.props.closeModal}>
                     <div className="modal-child" onClick={e=> e.stopPropagation()}>
                         <div className="text-post-form-container">
                             <button className="currentUser-button-post-form">
-                                {this.props.postOwner.username}
+                                {this.props.post.username}
                             </button>
                             <form className="post-form-form" onSubmit={this.handleSubmit}>
                                 <div className="post-form-title">
@@ -56,6 +69,11 @@ class EditPostForm extends React.Component {
                                         onChange={this.update("title")}
                                         // placeholder="Title"
                                     />
+                                </div>
+                                <div>
+                                    {this.props.post.post_type === "photo" ? 
+                                        <img src={this.props.post.mediaUrl} /> : null
+                                    }
                                 </div>
                                 <div className="post-form-body">
                                     <textarea

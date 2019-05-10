@@ -3,7 +3,7 @@ import NavContainer from "./nav/nav_container";
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import PostFeedContainer from './dashboard/post_feed_container';
-import Modal from './modal/modal';
+import EditPostFormContainer from "./dashboard/postForms/edit_post_form_container";
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import {
     Route,
@@ -12,6 +12,7 @@ import {
     Link,
     HashRouter
 } from 'react-router-dom';
+import EditPostForm from './dashboard/postForms/edit_post_form';
 
 class App extends React.Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class App extends React.Component {
         return (
             <div className="background" id="backGroundDiv">
                 <Route path ="/" component={NavContainer} />
-                {/* <Modal /> implement switch case modal functionality later*/}
+                <EditPostFormContainer />
                 <Switch>
                     <ProtectedRoute exact path="/posts" component={PostFeedContainer}/>
                     <AuthRoute exact path="/login" component={LogInFormContainer} />

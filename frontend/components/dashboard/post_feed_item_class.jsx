@@ -1,12 +1,17 @@
 import React from 'react';
-import EditPostForm from './edit_post_form';
+import EditPostForm from './postForms/edit_post_form'
 
 class PostFeedItemClass extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = ({
+            displayEditPostForm: false
+        })
+
         this.isLikedByCurrentUser = this.isLikedByCurrentUser.bind(this);
         this.displayPostMedia = this.displayPostMedia.bind(this);
+        this.displayEditPostForm = this.displayEditPostForm.bind(this);
     }
 
     isLikedByCurrentUser() {
@@ -47,6 +52,7 @@ class PostFeedItemClass extends React.Component {
     }
 
     displayEditPostForm() {
+            // debugger
             return(
                 <EditPostForm postOwner={this.props.postOwner}
                             updatePost={this.props.updatePost}
@@ -60,13 +66,15 @@ class PostFeedItemClass extends React.Component {
 
     displayInteractionButtons() {
         if (this.props.post.user_id === this.props.currentUserId) {
+            // debugger
+            const postId = this.props.post.id
             return (
                 <div className="post-feed-item-buttons">
                     <button className="feed-item-icon-button"
-                            onClick={this.props.openModal}>
+                            onClick={() => this.props.openModal(this.props.post.id)}>
                             <i className="icon_edit"/>
                     </button>
-
+                    
                     <button onClick={() => this.props.deletePost(this.props.post.id)} 
                             className="feed-item-icon-button">
                             <i className="icon_delete"/>
@@ -78,12 +86,6 @@ class PostFeedItemClass extends React.Component {
         }
     }
 
-    // interactionButtons() {
-    //     if (this.state.interactionButtons) {
-    //         return <button>Derp</button>
-    //     }
-    // }
-
     render() {
         return (
             <div className="feed-item">
@@ -92,13 +94,13 @@ class PostFeedItemClass extends React.Component {
               </div>
               <div className="feed-content">
                 <div className="post-feed-post-owner-username">
-                    {this.props.postOwner.username}
+                    Here's a blog: <div>{this.props.postOwner.username}</div>
                 </div>
                 {this.displayPostMedia()}
                 <div className="feed-item-body">{this.props.post.body}</div>
                 <div className="feed-item-num-likes">
                     {this.props.likesForThisPost.length} notes
-      </div>
+                </div>
                 <div className="feed-item-like-unlike-buttons">
                     {this.isLikedByCurrentUser()}
                 </div>
@@ -106,7 +108,7 @@ class PostFeedItemClass extends React.Component {
                     <i className="icon_reblog"/>
                 </div>
                 {this.displayInteractionButtons()}
-                {this.displayEditPostForm()}
+                {/* {this.displayEditPostForm()} */}
               </div>
             </div>
         )
