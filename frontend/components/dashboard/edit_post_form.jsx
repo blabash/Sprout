@@ -59,11 +59,13 @@ class EditPostForm extends React.Component {
                       onSubmit={this.handleSubmit}
                     >
                       <div className="post-form-title">
-                          {this.props.post.post_type !== "photo" ? <textarea
-                          className="post-form-title-input"
-                          value={this.state.title}
-                          onChange={this.update("title")}
-                        /> : null}
+                        {this.props.post.post_type !== "photo" ? (
+                          <textarea
+                            className="post-form-title-input"
+                            value={this.state.title}
+                            onChange={this.update("title")}
+                          />
+                        ) : null}
                       </div>
                       <div className="photo-post-img">
                         {this.props.post.post_type === "photo" ? (

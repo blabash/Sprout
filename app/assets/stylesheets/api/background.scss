@@ -37,11 +37,11 @@
 .feed-item-body {
   padding-right: 20px;
     padding-left: 20px;
-    width: 100%;
     font-family: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 21px;
     margin-bottom: 13px;
+    word-break: break-word;
 }
 
 .feed-item-num-likes {
@@ -188,11 +188,13 @@
   word-break: break-all;
   width: 500px;
   resize: none;
+  height: 57px;
 }
 
 .post-form-body {
   padding-left: 20px;
   padding-right: 20px;
+  min-height: 80px;
 }
 
 .post-form-body-input {
@@ -255,6 +257,7 @@
     font-size: 36px;
     padding-right: 20px;
     padding-left: 20px;
+    word-break: break-word;
 }
 
 .feed-item-body {
