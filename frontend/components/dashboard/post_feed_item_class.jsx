@@ -61,18 +61,24 @@ class PostFeedItemClass extends React.Component {
     displayInteractionButtons() {
         if (this.props.post.user_id === this.props.currentUserId) {
             return (
-                <div className="post-feed-item-buttons">
-                    <button className="feed-item-icon-button"
-                            onClick={this.props.openModal}>
-                            <i className="icon_edit"/>
-                    </button>
+              <div className="post-feed-item-buttons">
+                <button
+                  className="feed-item-icon-button"
+                  onClick={() => this.props.openModal(this.props.post.id)}
+                >
+                  <i className="icon_edit" />
+                </button>
 
-                    <button onClick={() => this.props.deletePost(this.props.post.id)} 
-                            className="feed-item-icon-button">
-                            <i className="icon_delete"/>
-                    </button>
-                </div>
-            )
+                <button
+                  onClick={() =>
+                    this.props.deletePost(this.props.post.id)
+                  }
+                  className="feed-item-icon-button"
+                >
+                  <i className="icon_delete" />
+                </button>
+              </div>
+            );
         } else {
             return null
         }
@@ -92,7 +98,7 @@ class PostFeedItemClass extends React.Component {
                 <div className="feed-item-body">{this.props.post.body}</div>
                 <div className="feed-item-num-likes">
                     {this.props.likesForThisPost.length} 
-                    {this.props.likesForThisPost.length > 1 ? ' likes' : ' like'}
+                    {this.props.likesForThisPost.length === 1 ? ' like' : ' likes'}
                 </div>
                 <div className="feed-item-like-unlike-buttons">
                     {this.isLikedByCurrentUser()}

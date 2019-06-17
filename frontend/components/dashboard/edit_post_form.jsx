@@ -40,7 +40,7 @@ class EditPostForm extends React.Component {
     }
 
     render() {
-        if(this.props.modal){
+        if(this.props.modal === this.props.post.id){
             return (
                 <div className="modal-background" onClick={this.props.closeModal}>
                     <div className="modal-child" onClick={e=> e.stopPropagation()}>
