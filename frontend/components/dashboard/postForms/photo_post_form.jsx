@@ -7,7 +7,7 @@ class PhotoPostForm extends React.Component {
         super(props);
 
         this.state = ({
-            title: "dummy title of photo",
+            title: "dummyTitle",   //this is to satisfy backend constraint that all posts must have a title
             user_id: this.props.currentUser.id,
             caption: "",
             post_type: "photo",
