@@ -91,8 +91,9 @@ class PostFeedItemClass extends React.Component {
                 {this.displayPostMedia()}
                 <div className="feed-item-body">{this.props.post.body}</div>
                 <div className="feed-item-num-likes">
-                    {this.props.likesForThisPost.length} notes
-      </div>
+                    {this.props.likesForThisPost.length} 
+                    {this.props.likesForThisPost.length > 1 ? ' likes' : ' like'}
+                </div>
                 <div className="feed-item-like-unlike-buttons">
                     {this.isLikedByCurrentUser()}
                 </div>
