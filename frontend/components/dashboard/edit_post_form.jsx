@@ -17,6 +17,17 @@ class EditPostForm extends React.Component {
         }).find('textarea').change();
     }
 
+    componentDidUpdate() {
+            $("#root")
+              .on("load", function() {
+                $(this)
+                  .height(0)
+                  .height(this.scrollHeight);
+              })
+              .find("textarea")
+              .change();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         // debugger;
@@ -63,6 +74,7 @@ class EditPostForm extends React.Component {
                           <textarea
                             className="post-form-title-input"
                             value={this.state.title}
+                            id="edit-title-textarea"
                             onChange={this.update("title")}
                           />
                         ) : null}
