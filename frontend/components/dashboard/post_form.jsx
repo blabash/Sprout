@@ -32,42 +32,62 @@ class PostForm extends React.Component {
                 return <TextPostForm 
                             currentUser={this.props.currentUser}
                             createPost={this.props.createPost}
+                            currentUserProfilePic={this.props.currentUserProfilePic}
+                            currentUsername={this.props.currentUsername}
                             closePostForm={this.closePostForm.bind(this)}
                         />
             case "photo":
-                return <PhotoPostForm 
-                            currentUser={this.props.currentUser}
-                            createPost={this.props.createPost}
-                            closePostForm={this.closePostForm.bind(this)}
-                        />
+                return (
+                  <PhotoPostForm
+                    currentUser={this.props.currentUser}
+                    createPost={this.props.createPost}
+                    currentUserProfilePic={
+                      this.props.currentUserProfilePic
+                    }
+                    currentUsername={this.props.currentUsername}
+                    closePostForm={this.closePostForm.bind(
+                      this
+                    )}
+                  />
+                );
             case "quote":
                 return <TextPostForm 
                             currentUser={this.props.currentUser}
                             createPost={this.props.createPost}
+                            currentUserProfilePic={this.props.currentUserProfilePic}
+                            currentUsername={this.props.currentUsername}
                             closePostForm={this.closePostForm.bind(this)}
                         />
             case "link":
                 return <TextPostForm 
                             currentUser={this.props.currentUser}
                             createPost={this.props.createPost}
+                            currentUserProfilePic={this.props.currentUserProfilePic}
+                            currentUsername={this.props.currentUsername}
                             closePostForm={this.closePostForm.bind(this)}
                         />
             case "chat":
                 return <TextPostForm 
                             currentUser={this.props.currentUser}
                             createPost={this.props.createPost}
+                            currentUserProfilePic={this.props.currentUserProfilePic}
+                            currentUsername={this.props.currentUsername}
                             closePostForm={this.closePostForm.bind(this)}
                         />
             case "audio":
                 return <TextPostForm 
                             currentUser={this.props.currentUser}
                             createPost={this.props.createPost}
+                            currentUserProfilePic={this.props.currentUserProfilePic}
+                            currentUsername={this.props.currentUsername}
                             closePostForm={this.closePostForm.bind(this)}
                         />
             case "video":
-                return <TextPostForm
+                return <TextPostForm 
                             currentUser={this.props.currentUser}
                             createPost={this.props.createPost}
+                            currentUserProfilePic={this.props.currentUserProfilePic}
+                            currentUsername={this.props.currentUsername}
                             closePostForm={this.closePostForm.bind(this)}
                         />
             default:

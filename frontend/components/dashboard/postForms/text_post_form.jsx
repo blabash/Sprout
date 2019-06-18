@@ -5,7 +5,7 @@ class TextPostForm extends React.Component {
         super(props);
 
         this.state = ({
-            user_id: this.props.currentUser.id,
+            user_id: this.props.currentUser,
             title: "",
             body: "",
             post_type: "text",
@@ -42,36 +42,49 @@ class TextPostForm extends React.Component {
     }
 
     render() {
-        return(
-            <div className="text-post-form-container">
-                <button className="currentUser-button-post-form">
-                    {this.props.currentUser.username}
-                </button>
-                <form className="post-form-form" onSubmit={this.handleSubmit}>
-                    <div className="post-form-title">
-                        <textarea
-                        className="post-form-title-input"
-                        value={this.state.title}
-                        onChange={this.update("title")}
-                        placeholder="Title"
-                        />
-                    </div>
-                    <div className="post-form-body">
-                        <textarea
-                        className="post-form-body-input"
-                        value={this.state.body}
-                        onChange={this.update("body")}
-                        placeholder="Your text here."
-                        />
-                    </div>
-                    {this.postButton()}
-                </form>
-                <button className="post-form-form-close-button"
-                        onClick={this.props.closePostForm()}>
-                    Close
-                </button>
+        return (
+          <div className="text-post-form-container">
+            <div className="feed-item-avatar adjustup">
+              <img
+                src={this.props.currentUserProfilePic}
+                className="feed-item-avatar-image"
+                height="64"
+                width="64"
+              />
             </div>
-        )
+            <button className="currentUser-button-post-form">
+              {this.props.currentUsername}
+            </button>
+            <form
+              className="post-form-form"
+              onSubmit={this.handleSubmit}
+            >
+              <div className="post-form-title">
+                <textarea
+                  className="post-form-title-input"
+                  value={this.state.title}
+                  onChange={this.update("title")}
+                  placeholder="Title"
+                />
+              </div>
+              <div className="post-form-body">
+                <textarea
+                  className="post-form-body-input"
+                  value={this.state.body}
+                  onChange={this.update("body")}
+                  placeholder="Your text here."
+                />
+              </div>
+              {this.postButton()}
+            </form>
+            <button
+              className="post-form-form-close-button"
+              onClick={this.props.closePostForm()}
+            >
+              Close
+            </button>
+          </div>
+        );
     }
 }
 

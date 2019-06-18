@@ -51,32 +51,46 @@ class PhotoPostForm extends React.Component {
 
     render() {
         return (
-            <div className="photo-post-form-container">
-                <button className="currentUser-button-post-form">
-                    {this.props.currentUser.username}
-                </button>
-                <form className="post-form-form" onSubmit={this.handleSubmit}>
-                    <input type="file"
-                        className="photo-post-form-file-input"
-                        accept="image/*"
-                        onChange={this.handleFile.bind(this)}
-                    />
-                    <div className="post-form-caption">
-                        <textarea
-                            className="photo-post-form-caption-input"
-                            value={this.state.caption}
-                            onChange={this.update("caption")}
-                            placeholder="Add a caption, if you like"
-                        />
-                    </div>
-                    {this.postButton()}
-                </form>
-                <button className="post-form-form-close-button"
-                    onClick={this.props.closePostForm()}>
-                    Close
-                </button>
+          <div className="photo-post-form-container">
+            <div className="feed-item-avatar adjustup">
+              <img
+                src={this.props.currentUserProfilePic}
+                className="feed-item-avatar-image"
+                height="64"
+                width="64"
+              />
             </div>
-        )
+            <button className="currentUser-button-post-form">
+              {this.props.currentUsername}
+            </button>
+            <form
+              className="post-form-form"
+              onSubmit={this.handleSubmit}
+            >
+              <input
+                type="file"
+                className="photo-post-form-file-input"
+                accept="image/*"
+                onChange={this.handleFile.bind(this)}
+              />
+              <div className="post-form-caption">
+                <textarea
+                  className="photo-post-form-caption-input"
+                  value={this.state.caption}
+                  onChange={this.update("caption")}
+                  placeholder="Add a caption, if you like"
+                />
+              </div>
+              {this.postButton()}
+            </form>
+            <button
+              className="post-form-form-close-button"
+              onClick={this.props.closePostForm()}
+            >
+              Close
+            </button>
+          </div>
+        );
     }
 }
 
