@@ -11,12 +11,14 @@ class PostFeed extends React.Component {
     this.state = {
       hasMore: true,
       sliceEndIdx: 4, //update to check if 3 is greater than posts.length
+      recentPosts: []
     };
 
     this.sliceMore = this.sliceMore.bind(this);
 
+    this.setRecentPosts = this.setRecentPosts.bind(this);
     // Binds our scroll event handler
-    window.onscroll = debounce(() => {
+    window.onscroll = debounce(() => { //debounce throttles how often this function will fire (100ms in this case)
       const {
         state: {
           hasMore,
@@ -24,12 +26,11 @@ class PostFeed extends React.Component {
       } = this;
 
       // Bails early if there's nothing left 
-      if (!hasMore) return;
 
       // Checks that the page has scrolled to the bottom
       if (
         window.innerHeight + document.documentElement.scrollTop
-        === document.documentElement.offsetHeight
+        >= document.documentElement.scrollHeight
       ) {
         this.sliceMore();
       }
@@ -38,6 +39,14 @@ class PostFeed extends React.Component {
 
   componentDidMount() {
     this.props.fetchPosts();
+    // debugger;
+  }
+
+  componentWillReceiveProps(nextprops) {
+    this.setState({
+      recentPosts: nextprops.posts.reverse() /* have to reverse posts in componentWillReceiveProps because reversing them in the render 
+      method reverses all the posts each time you hit the bottom of the scroll */
+    })
   }
 
   sliceMore() {
@@ -50,8 +59,16 @@ class PostFeed extends React.Component {
     });
   }
 
+  setRecentPosts() {
+    let recentPosts = this.props.posts.reverse()
+    this.setState({
+      recentPosts: recentPosts
+    })
+  }
+
   render() {
-    let posts = this.props.posts.slice(0,this.state.sliceEndIdx).map((post, idx) => {
+    let recentPosts = this.state.recentPosts;
+    let posts = recentPosts.slice(0,this.state.sliceEndIdx).map((post, idx) => {
       let likesForThisPost = this.props.likes.filter((like) => {
         return like.post_id === post.id
       })
@@ -73,7 +90,7 @@ class PostFeed extends React.Component {
             closeModal={this.props.closeModal}
             key={idx} />
       ) 
-    }).reverse();
+    });
     return(
       <div>
         <div className="feed-centered">
@@ -81,7 +98,7 @@ class PostFeed extends React.Component {
             <PostFormContainer />
             {posts}
             {!this.state.hasMore &&
-              <div>You did it! You reached the end!</div>
+              <div>That's all folks!</div>
             }
           </div>
         </div>

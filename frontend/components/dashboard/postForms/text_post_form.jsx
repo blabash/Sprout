@@ -21,8 +21,6 @@ class TextPostForm extends React.Component {
         e.preventDefault();
         // debugger;
         this.props.createPost(this.state).then(this.props.closePostForm());
-        let backgroundDiv = document.getElementById("backGroundDiv");
-        // backgroundDiv.className -= "primary-display-div";
     }
 
     update(field) {
