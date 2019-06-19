@@ -8,6 +8,10 @@ body {
   float: left;
 }
 
+.icon-text {
+  cursor: pointer;
+}
+
 .new-post-form, .icons-container {
   border-radius: 2px;
   display: inline-block;
@@ -32,6 +36,28 @@ body {
 
 .icon_post_photo {
   color: #ff492f;
+}
+
+.icon_postforms_add_photo {
+  color: #989898;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+}
+
+.icon_postforms_selfie_wink:before {
+    content: "\EA89";
+    position: absolute;
+    top: 70%;
+    right: 48%;
+    color: #989898;
+}
+
+.photo-input-tray-text {
+    position: absolute;
+    top: 55%;
+    left: 38%;
+    color: #989898;
 }
 
 .icon_post_quote {
@@ -76,3 +102,37 @@ body {
    top: -5px;
    padding-bottom: .1em;
 }
+
+.photo-input-tray {
+    height: 196px;
+    border-top: lightgray dashed 2px;
+    border-bottom: lightgray dashed 2px;
+    background-color: aliceblue;
+    position: relative;
+}
+
+// #photo-input-tray-icon {
+//   position: absolute;
+//   top: 20%;
+//   left: 40%;
+// }
+
+.photo-post-form-caption-input {
+  border: none;
+  width: 100%;
+  resize: none;
+  padding-top: 10px;
+  padding-left: 10px;
+  word-break: break-word;
+  color: black;
+  font-size: 14px;
+}
+
+input.photo-post-form-file-input {
+    height: 100%;
+    width: 100%;
+    background-color: aliceblue;
+    opacity: 0;
+    cursor: pointer;
+}
+

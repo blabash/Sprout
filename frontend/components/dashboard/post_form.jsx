@@ -112,31 +112,31 @@ class PostForm extends React.Component {
                 </div>
                 <a className="text-post-button i-element" onClick={this.changePostType("text")}>
                     <i className="text-icon icon-post icon_post_text jump"></i>
-                    <div className="text-icon-text">Text</div>
+                    <div className="icon-text">Text</div>
                 </a>
                 <a className="photo-post-button i-element" onClick={this.changePostType("photo")}>
                     <i className="photo-icon icon-post icon_post_photo jump"></i>
-                    <div className="photo-icon-text">Photo</div>
+                    <div className="icon-text">Photo</div>
                 </a>
                 <a className="quote-post-button i-element" onClick={this.changePostType("quote")}>
                     <i className="quote-icon icon-post icon_post_quote jump"></i>
-                    <div className="quote-icon-text">Quote</div>
+                    <div className="icon-text">Quote</div>
                 </a>
                 <a className="link-post-button i-element" onClick={this.changePostType("link")}>
                     <i className="link-icon icon-post icon_post_link jump"></i>
-                    <div className="link-icon-text">Link</div>
+                    <div className="icon-text">Link</div>
                 </a>
                 <a className="chat-post-button i-element" onClick={this.changePostType("chat")}>
                     <i className="chat-icon icon-post icon_post_chat jump"></i>
-                    <div className="chat-icon-text">Chat</div>
+                    <div className="icon-text">Chat</div>
                 </a>
                 <a className="audio-post-button i-element" onClick={this.changePostType("audio")}>
                     <i className="audio-icon icon-post icon_post_audio jump"></i>
-                    <div className="audio-icon-text">Audio</div>
+                    <div className="icon-text">Audio</div>
                 </a>
                 <a className="video-post-button i-element" onClick={this.changePostType("video")}>
                     <i className="video-icon icon-post icon_post_video jump"></i>
-                    <div className="video-icon-text">Video</div>
+                    <div className="icon-text">Video</div>
                 </a>
             </div>
         )

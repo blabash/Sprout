@@ -31,7 +31,6 @@
     font-weight: 400;
     font-size: 36px;
     line-height: 47px;
-    margin-bottom: 10px;
 }
 
 .feed-item-body {
@@ -262,11 +261,10 @@
 }
 
 .feed-item-body {
-  padding-right: 20px;
-    padding-left: 20px;
-    font-family: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    line-height: 21px;
+  padding: 10px 20px 0px 20px;
+  font-family: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .signup-main-div-animate,.login-main-div-animate {
@@ -349,9 +347,8 @@
 
 .modal-child {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 10%;
+  right: 33.33%;
 }
 
 
