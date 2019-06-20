@@ -104,6 +104,13 @@
   background-color: #00b8ff;
 }
 
+#nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 500;
+}
+
 .post-form-form-close-button {
   font-size: 13px;
     font-weight: 700;
@@ -220,9 +227,8 @@
 }
 
 .feed-centered {
-  padding-top: 15px;
+  margin-top: 90px;
   text-align: center;
-  border-top: 1px solid rgb(82, 82, 83);
   z-index: 200;
 }
 
@@ -349,7 +355,7 @@
 
 .modal-child {
   position: absolute;
-  top: 10%;
+  top: 20%;
   right: 33.33%;
 }
 

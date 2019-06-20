@@ -48,23 +48,23 @@ class Nav extends React.Component {
                                 width="64"
                             />
                         </Link>;
-        let navBar = document.getElementById("nav-bar");
 
         if (this.props.location.pathname === "/login") {
             mainButton = <Link to="/signup" className="nav-signup-button"><button className="sign-up-login">Sign up</button></Link>;
-            // navBar.classList.remove("main-nav")
         } else if (this.props.location.pathname === "/signup") {
             mainButton = <Link to="/login" className="nav-login-button"><button className="sign-up-login">Log in</button></Link>;
         } else if (this.props.location.pathname ==="/posts") {
             mainButton = <button  className="sign-up-login" onClick={this.props.logout}>Log out</button>;
-            // navBar.classList.add("main-nav")
         } else if (this.props.location.pathname === "/" && this.props.getStarted) {
-            mainButton = <Link to="/login" className="nav-login-button"><button className="sign-up-login">Log in</button></Link>; 
-        }
-
+            mainButton = <Link to="/login" className="nav-login-button"><button className="sign-up-login">Log in</button></Link>;
+        } 
         
         return (
-            <nav id="nav-bar">
+            <nav style={this.props.location.pathname === "/posts" ? 
+                { backgroundColor: "#001935", borderBottom: "1px solid #525253" } : 
+                { backgroundColor: "", borderBottom: ""}} 
+                id="nav-bar">
+
                 {logoButton}
                 {mainButton}
             </nav>
