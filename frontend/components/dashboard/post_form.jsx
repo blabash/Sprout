@@ -1,6 +1,7 @@
 import React from 'react';
 import TextPostForm from './postForms/text_post_form';
 import PhotoPostForm from "./postForms/photo_post_form";
+import QuotePostForm from "./postForms/quote_post_form";
 
 class PostForm extends React.Component {
     constructor(props) {
@@ -51,7 +52,7 @@ class PostForm extends React.Component {
                   />
                 );
             case "quote":
-                return <TextPostForm 
+                return <QuotePostForm 
                             currentUser={this.props.currentUser}
                             createPost={this.props.createPost}
                             currentUserProfilePic={this.props.currentUserProfilePic}
