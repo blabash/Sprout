@@ -6,7 +6,6 @@ import TextPostForm from '../dashboard/postForms/text_post_form';
 import PhotoPostForm from '../dashboard/postForms/photo_post_form';
 
 function Modal({ modal, closeModal }) {
-    debugger;
     if (!modal) {
         return null;
     }

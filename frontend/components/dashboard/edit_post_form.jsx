@@ -28,6 +28,15 @@ class EditPostForm extends React.Component {
               .change();
     }
 
+    componentWillReceiveProps(nextProps) {
+      this.setState({
+          id: nextProps.post.id,
+          title: nextProps.post.title,
+          body: nextProps.post.body,
+          post_type: nextProps.post.post_type,
+      })
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         // debugger;
@@ -52,6 +61,7 @@ class EditPostForm extends React.Component {
 
     render() {
         if(this.props.modal === this.props.post.id){
+          // debugger;
             return (
               <div
                 className="modal-background"
